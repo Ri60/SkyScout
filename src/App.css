@@ -208,3 +208,9 @@ body {
   color: #bbc5dd;
   line-height: 1.6;
 }
+.target-description {
+  color: #d6e2ff;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 12px 0 18px;
+}

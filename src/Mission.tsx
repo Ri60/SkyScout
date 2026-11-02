@@ -34,7 +34,7 @@ export default function Mission({
     }
   })
 
-  // Update the checklist and save it locally
+  // Update checklist and save progress locally
   function toggleCompleted(name: string) {
     const updated = completed.includes(name)
       ? completed.filter(item => item !== name)
@@ -52,22 +52,31 @@ export default function Mission({
     }
   }
 
-  // Convert azimuth to a compass direction
+  // Convert azimuth into a precise 16-point compass direction
   function getDirection(azimuth: number) {
     const directions = [
       'North',
+      'North-northeast',
       'Northeast',
+      'East-northeast',
       'East',
+      'East-southeast',
       'Southeast',
+      'South-southeast',
       'South',
+      'South-southwest',
       'Southwest',
+      'West-southwest',
       'West',
-      'Northwest'
+      'West-northwest',
+      'Northwest',
+      'North-northwest'
     ]
 
-    return directions[
-      Math.round(azimuth / 45) % 8
-    ]
+    const normalized = ((azimuth % 360) + 360) % 360
+    const index = Math.round(normalized / 22.5) % 16
+
+    return directions[index]
   }
 
   // Calculate progress for this mission
@@ -130,6 +139,13 @@ export default function Mission({
         >
 
           <h3>{target.name}</h3>
+
+          {/* Beginner-friendly object description */}
+          {target.description && (
+            <p className="target-description">
+              {target.description}
+            </p>
+          )}
 
           <p>
             Direction: {getDirection(target.azimuth)}
