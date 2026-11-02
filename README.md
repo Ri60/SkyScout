@@ -2,7 +2,6 @@
 
 **A beginner-friendly stargazing mission planner.** SkyScout turns a chosen city, date, and time into a short, guided **30-minute naked-eye observing mission**. It recommends a small number of promising celestial targets, shows their approximate positions on a directional sky chart, explains how to find them, and lets users check off what they observe.
 
-**Repository:** https://github.com/Ri60/SkyScout
 
 ## Project status
 
