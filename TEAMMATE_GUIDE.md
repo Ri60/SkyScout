@@ -2,9 +2,6 @@
 
 **A start-to-finish guide for anyone joining SkyScout, including people who have never used React, TypeScript, GitHub, or astronomy software.**
 
-**Repository:** https://github.com/Ri60/SkyScout  
-
-**Project:** Beginner-friendly night-sky mission planner  
 
 **Project stage:** Working MVP; final-polish changes merged into `main` (Pull Request #2)
 
