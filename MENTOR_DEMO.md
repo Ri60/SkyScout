@@ -1,5 +1,5 @@
-
-# SkyScout — Mentor Demo
+﻿
+# SkyScout - Mentor Demo
 
 ## Project Overview
 
@@ -13,13 +13,13 @@ an observation checklist.
 
 ## Technology Stack
 
-- React and TypeScript — user interface
-- Vite — development and build tooling
-- Astronomy Engine — celestial position calculations
-- Open-Meteo — location lookup
-- Luxon — time-zone conversion
-- Local Storage — saved observation progress
-- Vitest — automated testing
+- React and TypeScript â€” user interface
+- Vite â€” development and build tooling
+- Astronomy Engine â€” celestial position calculations
+- Open-Meteo â€” location lookup
+- Luxon â€” time-zone conversion
+- Local Storage â€” saved observation progress
+- Vitest â€” automated testing
 
 ## How SkyScout Works
 
@@ -46,7 +46,7 @@ an observation checklist.
 
 ## Testing
 
-- 11 automated tests passed.
+- 15 automated tests passed.
 - Lint completed with zero warnings and errors.
 - Production build completed successfully.
 - The sky chart was visually checked in a mobile-sized viewport.
@@ -56,10 +56,10 @@ an observation checklist.
 SkyScout was compared against Stellarium Web for Oshawa,
 November 3, 2026, at 9:00 PM.
 
-- Vega altitude difference: 0.11°
-- Vega azimuth difference: 0.05°
-- Saturn altitude difference: 0.02°
-- Saturn azimuth difference: 0.10°
+- Vega altitude difference: 0.11Â°
+- Vega azimuth difference: 0.05Â°
+- Saturn altitude difference: 0.02Â°
+- Saturn azimuth difference: 0.10Â°
 
 Both objects agreed with Stellarium within 0.2 degrees
 in this initial comparison.

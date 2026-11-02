@@ -1,7 +1,7 @@
 
 import { useRef, useState } from 'react'
 import { getVisibleObjects, type SkyTarget } from './astronomy'
-import { searchLocation, type LocationResult } from './location'
+import { searchLocations, type LocationResult } from './location'
 import { getObservationDate } from './timezone'
 import Mission from './Mission'
 import SkyChart from './SkyChart'
@@ -12,20 +12,20 @@ function App() {
   const [date, setDate] = useState('')
   const [time, setTime] = useState('')
 
+  const [matches, setMatches] = useState<LocationResult[]>([])
+  const [selectedId, setSelectedId] = useState('')
+
   const [targets, setTargets] = useState<SkyTarget[] | null>(null)
   const [missionId, setMissionId] = useState('')
+  const [resolvedLocation, setResolvedLocation] =
+    useState<LocationResult | null>(null)
 
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
 
-  const [resolvedLocation, setResolvedLocation] =
-    useState<LocationResult | null>(null)
-
-  // Identifies the latest request so outdated searches are ignored.
   const requestId = useRef(0)
 
-  // Clear outdated results whenever the observation inputs change.
-  function clearPreviousMission() {
+  function clearMission() {
     requestId.current += 1
     setTargets(null)
     setMissionId('')
@@ -34,76 +34,42 @@ function App() {
     setLoading(false)
   }
 
-  // Generate astronomy recommendations for the selected city.
-  async function handleSubmit(
-    event: React.FormEvent<HTMLFormElement>
-  ) {
-    event.preventDefault()
+  function changeCity(value: string) {
+    setLocation(value)
+    setMatches([])
+    setSelectedId('')
+    clearMission()
+  }
 
-    if (!location.trim() || !date || !time) {
-      setError('Please enter a location, date, and time.')
-      return
-    }
-
+  async function findLocations() {
     const currentRequest = ++requestId.current
 
     setLoading(true)
     setError('')
+    setMatches([])
+    setSelectedId('')
     setTargets(null)
     setMissionId('')
     setResolvedLocation(null)
 
     try {
-      // Convert the city name into coordinates and a time zone.
-      const place = await searchLocation(location)
+      const results = await searchLocations(location)
 
-      // Ignore responses from previous searches.
-      if (currentRequest !== requestId.current) {
-        return
+      if (currentRequest !== requestId.current) return
+
+      setMatches(results)
+
+      if (results.length === 1) {
+        setSelectedId(String(results[0].id))
       }
-
-      // Interpret the observation time in the city's time zone.
-      const observationDate = getObservationDate(
-        date,
-        time,
-        place.timezone
-      )
-
-      if (Number.isNaN(observationDate.getTime())) {
-        throw new Error('Please select a valid date and time.')
-      }
-
-      // Calculate objects using the city's coordinates.
-      const results = getVisibleObjects(
-        observationDate,
-        place.latitude,
-        place.longitude
-      )
-
-      // Unique identifier for this observing session.
-      const newMissionId =
-        `${place.latitude}-${place.longitude}-${date}-${time}`
-
-      // Only display results from the latest request.
-      if (currentRequest !== requestId.current) {
-        return
-      }
-
-      setMissionId(newMissionId)
-      setResolvedLocation(place)
-      setTargets(results)
-
     } catch (err) {
-      if (currentRequest !== requestId.current) {
-        return
-      }
+      if (currentRequest !== requestId.current) return
 
       setError(
         err instanceof Error
           ? err.message
-          : 'Something went wrong. Please try again.'
+          : 'Unable to search for locations.'
       )
-
     } finally {
       if (currentRequest === requestId.current) {
         setLoading(false)
@@ -111,41 +77,111 @@ function App() {
     }
   }
 
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+
+    if (!date || !time) {
+      setError('Please select an observation date and time.')
+      return
+    }
+
+    const place = matches.find(
+      match => String(match.id) === selectedId
+    )
+
+    if (!place) {
+      setError('Search for a city and select the correct location first.')
+      return
+    }
+
+    clearMission()
+
+    try {
+      const observationDate = getObservationDate(
+        date,
+        time,
+        place.timezone
+      )
+
+      const results = getVisibleObjects(
+        observationDate,
+        place.latitude,
+        place.longitude
+      )
+
+      const newMissionId =
+        `${place.latitude}-${place.longitude}-${date}-${time}`
+
+      setMissionId(newMissionId)
+      setResolvedLocation(place)
+      setTargets(results)
+    } catch (err) {
+      setError(
+        err instanceof Error
+          ? err.message
+          : 'Something went wrong. Please try again.'
+      )
+    }
+  }
+
   return (
     <main className="app">
-
       <h1>✨ SkyScout</h1>
       <p>Your personal guide to the night sky.</p>
 
       <h2>Plan Your Stargazing Mission</h2>
-      <p>
-        Discover the night sky with a guided 30-minute mission.
-      </p>
+      <p>Discover the night sky with a guided 30-minute mission.</p>
 
-      {/* Observation form */}
       <form onSubmit={handleSubmit}>
-
         <label htmlFor="location">Your Location</label>
         <input
           id="location"
           type="text"
           placeholder="e.g. Toronto"
           value={location}
-          onChange={(e) => {
-            setLocation(e.target.value)
-            clearPreviousMission()
-          }}
+          onChange={e => changeCity(e.target.value)}
           required
         />
+
+        <button
+          type="button"
+          onClick={findLocations}
+          disabled={loading || !location.trim()}
+        >
+          {loading ? 'Searching...' : 'Find Locations'}
+        </button>
+
+        {matches.length > 0 && (
+          <>
+            <label htmlFor="location-choice">Choose Your City</label>
+            <select
+              id="location-choice"
+              value={selectedId}
+              onChange={e => {
+                setSelectedId(e.target.value)
+                clearMission()
+              }}
+              required
+            >
+              <option value="">Select the correct location</option>
+
+              {matches.map(place => (
+                <option key={place.id} value={String(place.id)}>
+                  {place.name}
+                </option>
+              ))}
+            </select>
+          </>
+        )}
 
         <label htmlFor="date">Observation Date</label>
         <input
           id="date"
           type="date"
           value={date}
-          onChange={(e) => {
+          onChange={e => {
             setDate(e.target.value)
-            clearPreviousMission()
+            clearMission()
           }}
           required
         />
@@ -155,27 +191,24 @@ function App() {
           id="time"
           type="time"
           value={time}
-          onChange={(e) => {
+          onChange={e => {
             setTime(e.target.value)
-            clearPreviousMission()
+            clearMission()
           }}
           required
         />
 
         <button type="submit" disabled={loading}>
-          {loading ? 'Finding your sky...' : 'Plan My Mission'}
+          Plan My Mission
         </button>
-
       </form>
 
-      {/* Location lookup errors */}
       {error && (
         <p role="alert" className="error-message">
           {error}
         </p>
       )}
 
-      {/* Confirm the selected observing location */}
       {resolvedLocation && (
         <p className="resolved-location">
           Observing from: {resolvedLocation.name}
@@ -184,10 +217,8 @@ function App() {
         </p>
       )}
 
-      {/* Astronomy results */}
       {targets !== null && (
         <section className="results">
-
           <h2>Your SkyScout Results</h2>
 
           {targets.length === 0 ? (
@@ -198,17 +229,9 @@ function App() {
           ) : (
             targets.map(target => (
               <div key={target.name}>
-
                 <h3>{target.name}</h3>
-
-                <p>
-                  Altitude: {target.altitude.toFixed(1)}°
-                </p>
-
-                <p>
-                  Azimuth: {target.azimuth.toFixed(1)}°
-                </p>
-
+                <p>Altitude: {target.altitude.toFixed(1)}°</p>
+                <p>Azimuth: {target.azimuth.toFixed(1)}°</p>
               </div>
             ))
           )}
@@ -217,16 +240,13 @@ function App() {
             These are preliminary astronomy recommendations.
             Weather and local obstructions are not included.
           </p>
-
         </section>
       )}
 
-      {/* Directional sky chart */}
       {targets !== null && targets.length > 0 && (
         <SkyChart targets={targets} />
       )}
 
-      {/* Guided mission with separately saved progress */}
       {targets !== null && targets.length > 0 && (
         <Mission
           key={missionId}
@@ -234,7 +254,6 @@ function App() {
           missionId={missionId}
         />
       )}
-
     </main>
   )
 }
