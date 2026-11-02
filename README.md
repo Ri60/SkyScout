@@ -2,11 +2,9 @@
 
 **A beginner-friendly stargazing mission planner.** SkyScout turns a city, observation date, and local time into a short list of potential naked-eye sky targets, a directional sky chart, and a guided **30-minute observing mission**.
 
-**Repository:** [Ri60/SkyScout](https://github.com/Ri60/SkyScout)  
-**Stage:** Working MVP; ongoing improvements and validation  
-**Team onboarding:** [TEAMMATE_GUIDE.md](TEAMMATE_GUIDE.md)
 
-> **Branch note (November 2026):** The `main` branch contains the working MVP and the first reliability/mobile improvements. The **city-selection dropdown and React UI tests** have been implemented and tested locally on `feature/final-polish`, but were **not yet merged** when this document was prepared. The test count and feature list below distinguish those versions.
+
+> **Status (November 2026):** The MVP, multiple-city selection, responsive improvements, and 15 automated tests are included in the merged `main` branch. This is a working educational prototype, not a fully validated production astronomy service.
 
 ## What SkyScout does
 
@@ -17,7 +15,7 @@ A user selects a location, date, and **local observing time**. SkyScout resolves
 | Feature | Details | Status |
 | --- | --- | --- |
 | City lookup | Open-Meteo Geocoding API resolves coordinates and an IANA time zone | `main` |
-| Multiple matching cities | Choose a specific city (e.g., London, Ontario vs London, England) instead of accepting the first match | `feature/final-polish` (not merged yet) |
+| Multiple matching cities | Choose a specific city (e.g., London, Ontario vs London, England) instead of accepting the first match | `main` |
 | Local date/time conversion | Luxon handles the selected city's time zone and rejects ambiguous/nonexistent daylight-saving times | `main` |
 | Celestial calculations | Astronomy Engine calculates apparent positions of a limited catalogue | `main` |
 | Beginner-oriented recommendations | Up to three targets filtered by astronomical darkness, altitude, and magnitude | `main` |
@@ -25,7 +23,7 @@ A user selects a location, date, and **local observing time**. SkyScout resolves
 | Guided mission | Four steps spanning 30 minutes, plus target descriptions and compass guidance | `main` |
 | Saved checklist | Progress stored per mission in browser `localStorage` | `main` |
 | Outdated-result protection | Edits to city/date/time clear old recommendations and stale lookup responses are ignored | `main` |
-| Automated testing | 11 tests on `main`; four additional React UI tests passed locally on `feature/final-polish` | In progress |
+| Automated testing | 15 tests across four test files | `main` |
 
 ## Quick start
 
@@ -40,20 +38,9 @@ npm run dev
 
 Open the `Local:` address printed by Vite (for example, `http://localhost:5173/`; it may use a different port). Keep the server terminal open.
 
-To inspect the **in-progress city-selection and UI-testing version** on a local clone, use the feature branch **after its commits have been pushed**:
-
-```powershell
-git fetch origin
-git switch feature/final-polish
-npm ci
-npm run dev
-```
-
-If that branch is not available on GitHub yet, use `main`; do not assume unpushed work is present remotely.
-
 ## Use the application
 
-1. Enter a city. On `feature/final-polish`, click **Find Locations** and select the intended city from the dropdown; on the current `main`, verify the resolved city shown after submission.
+1. Enter a city, click **Find Locations**, and choose the correct city from the dropdown (for example, London, Ontario rather than London, England).
 2. Select an observation date and **time in that city's time zone**.
 3. Click **Plan My Mission**.
 4. Review the suggested targets, their altitude/azimuth, and the sky chart.
@@ -94,7 +81,7 @@ The catalogue is deliberately small: **Moon, Venus, Mars, Jupiter, Saturn, Siriu
 | IANA time zones and daylight saving | Luxon |
 | Sky visualization | SVG |
 | Browser-local checklist storage | `localStorage` |
-| Unit and component tests | Vitest; Testing Library + jsdom on `feature/final-polish` |
+| Unit and component tests | Vitest, React Testing Library, jest-dom, and jsdom |
 | Code checks | Oxlint and TypeScript (`npm run build`) |
 | Collaboration | Git and GitHub pull requests |
 
@@ -112,9 +99,9 @@ The catalogue is deliberately small: **Moon, Venus, Mars, Jupiter, Saturn, Siriu
 | `src/timezone.test.ts` | Four time-zone tests |
 | `src/astronomy.test.ts` | Four basic astronomy tests |
 | `src/astronomy.edge.test.ts` | Three boundary tests |
-| `src/App.test.tsx` | Four UI tests, currently on `feature/final-polish` |
+| `src/App.test.tsx` | Four React interface tests |
 | `ASTRONOMY_VALIDATION.md` | Independent comparison against Stellarium Web |
-| `MENTOR_DEMO.md` | Demonstration walkthrough (reflects the earlier 11-test milestone) |
+| `MENTOR_DEMO.md` | Mentor demonstration walkthrough (updated for 15 tests) |
 | `TEAMMATE_GUIDE.md` | Detailed onboarding, technical explanations, and workflow |
 
 ## Tests and quality checks
@@ -127,7 +114,7 @@ npm run lint
 npm run build
 ```
 
-The `--environment jsdom` form supports the feature branch's React component tests. On `main`, the existing astronomy and time-zone tests can also be run using `npx vitest run`.
+The `--environment jsdom` option provides the browser-like test environment required by the React component tests. These commands were run locally; automated GitHub CI is not yet configured.
 
 **Recorded local results, not a claim of CI verification:**
 
@@ -137,9 +124,9 @@ The `--environment jsdom` form supports the feature branch's React component tes
 | `astronomy.test.ts` | 4 | Invalid latitude/longitude, daytime, reasonable nighttime target structure |
 | `astronomy.edge.test.ts` | 3 | Invalid date, non-finite coordinates, maximum target count |
 | `App.test.tsx` | 4 | Form rendering, multiple-city options, clearing previous results, missing location selection |
-| **Total on feature branch, last local run** | **15 passing** | Four test files |
+| **Total on merged `main` (last local verification)** | **15 passing** | Four test files |
 
-On the last shared terminal run, **15/15 tests passed** (Vitest with jsdom). A separate earlier local run passed **lint (0 warnings, 0 errors)** and a production **build**, and a later `npm run build` succeeded after implementing city selection. **Rerun lint and build after all final-polish edits** before merging. The new tests mock astronomy and location functions; they verify UI behavior, not live API reliability or scientific accuracy.
+**Recorded local verification:** After final-polish cleanup, all **15/15 tests** passed, Oxlint reported **0 errors and 0 warnings**, and `npm run build` completed successfully. These results were observed before merging Pull Request #2; rerun the commands after cloning or pulling newer commits. The interface tests mock location lookup and astronomy results, so they do not independently verify a live API or all celestial positions.
 
 ## Independent astronomy comparison
 
@@ -156,7 +143,7 @@ These are **two objects at one place and one time**; they support initial agreem
 
 ## Known limitations and next steps
 
-- City disambiguation remains branch-dependent until `feature/final-polish` is merged.
+- City selection displays up to ten matching locations; some matching places may still be absent from the first page of API results.
 - The catalogue has only eight possible objects; there is no all-sky search.
 - Geocoding depends on network access and the external Open-Meteo service.
 - The 30-minute plan is guidance, not a running timer.
@@ -178,7 +165,7 @@ git switch -c feature/descriptive-name
 npx vitest run --environment jsdom
 npm run lint
 npm run build
-git add <files-you-changed>
+git add .
 git commit -m "Explain the change"
 git push -u origin feature/descriptive-name
 ```
@@ -189,6 +176,6 @@ Then open a pull request, describe the changes and test output, and obtain any r
 
 - [Team development guide](TEAMMATE_GUIDE.md) — beginner-friendly explanation of files, the development process, tests, and GitHub collaboration.
 - [Astronomy validation](ASTRONOMY_VALIDATION.md) — recorded comparison against Stellarium.
-- [Mentor demonstration](MENTOR_DEMO.md) — sample live walkthrough; update its testing and city-selection sections when final polish merges.
+- [Mentor demonstration](MENTOR_DEMO.md) — sample live walkthrough and reported validation.
 
 SkyScout is a prototype for educational and recreational use; it does not guarantee the visibility or safety of a particular observing session.
