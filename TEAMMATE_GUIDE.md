@@ -2,7 +2,7 @@
 
 **Start here if you have never worked on this project, GitHub, React, or astronomy code.** This guide explains the purpose, what we've already built, where everything lives, how to run it, how it works, how to test it, and how to safely help.
 
-**GitHub:** https://github.com/Ri60/SkyScout
+
 
 ## 1. What is SkyScout? (30-second explanation)
 
