@@ -1,6 +1,6 @@
 # SkyScout — Complete Teammate Guide (Beginner Edition)
 
-**Start here if you have never worked on this project, GitHub, React, or astronomy code.** This guide explains the purpose, what we've already built, where everything lives, how to run it, how it works, how to test it, and how to safely help.
+This guide explains the purpose, what we've already built, where everything lives, how to run it, how it works, how to test it, and how to safely help.
 
 
 
@@ -18,7 +18,7 @@ These historical output values are examples from testing, not a promise that eve
 
 ## 2. What the team has done so far
 
-This was built in stages. You do **not** have to redo these stages; this is the project history so you understand why each piece exists.
+This was built in stages. 
 
 | Stage | What we did | Why |
 | --- | --- | --- |
