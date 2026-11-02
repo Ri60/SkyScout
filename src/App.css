@@ -93,3 +93,118 @@ body {
 .app button:hover {
   background: #9aafff;
 }
+
+/* SkyScout Mission Section */
+
+.mission {
+  width: 100%;
+  max-width: 650px;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.mission h2 {
+  color: #b9caff;
+  margin-bottom: 12px;
+}
+
+.mission-card {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid #465b85;
+  border-radius: 16px;
+  padding: 25px;
+  margin: 20px 0;
+}
+
+.mission-card h3 {
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+
+.mission-card p {
+  color: #c9d6f4;
+}
+
+.mission-card label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+  color: #ffffff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.mission-card input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  accent-color: #718bff;
+  cursor: pointer;
+}
+
+/* 30-minute observing schedule */
+
+.mission-schedule {
+  width: 100%;
+  margin: 25px auto;
+  text-align: left;
+}
+
+.mission-schedule h3 {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-bottom: 25px;
+}
+
+.schedule-step {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #34466c;
+  border-left: 4px solid #91a8ff;
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 15px;
+}
+
+.schedule-step strong {
+  display: block;
+  color: #d6e2ff;
+  font-size: 1.05rem;
+  margin-bottom: 10px;
+}
+
+.schedule-step p {
+  color: #bbc5dd;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* SkyScout directional sky chart */
+
+.sky-chart {
+  width: 100%;
+  max-width: 650px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.sky-chart h2 {
+  color: #b9caff;
+  margin-bottom: 12px;
+}
+
+.sky-chart svg {
+  display: block;
+  width: 100%;
+  max-width: 460px;
+  height: auto;
+  margin: 25px auto;
+}
+
+.sky-chart p {
+  color: #bbc5dd;
+  line-height: 1.6;
+}
