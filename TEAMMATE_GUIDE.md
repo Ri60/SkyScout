@@ -2,8 +2,7 @@
 
 **A start-to-finish guide for anyone joining SkyScout, including people who have never used React, TypeScript, GitHub, or astronomy software.**
 
-**Repository:** https://github.com/Ri60/SkyScout  
-**Project:** Beginner-friendly night-sky mission planner  
+n 
 **Project stage:** Working MVP, with additional polishing in progress
 
 > **Version note:** The shared `main` branch contains the original working MVP and the merged reliability/mobile fixes. The multiple-city picker and four additional React UI tests were developed and passed locally on `feature/final-polish` but had **not yet been merged** when this guide was written. Sections explicitly identify branch-dependent behavior.
