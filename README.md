@@ -1,150 +1,165 @@
-# ✨ SkyScout
+# SkyScout
 
-**A beginner-friendly stargazing mission planner.** SkyScout turns a chosen city, date, and time into a short, guided **30-minute naked-eye observing mission**. It recommends a small number of promising celestial targets, shows their approximate positions on a directional sky chart, explains how to find them, and lets users check off what they observe.
+**SkyScout** is a beginner-friendly stargazing mission planner. Given a city, observation date, and local time, it identifies a small set of potentially observable celestial objects, displays their approximate positions on a directional sky chart, and generates a guided 30-minute observation checklist.
 
-**Repository:** https://github.com/Ri60/SkyScout
+**Repository:** https://github.com/Ri60/SkyScout  
+**Status:** Working MVP prototype; astronomical accuracy and real-world visibility require further validation.
 
-## Project status
+## Features
 
-**Working MVP prototype — still being validated.** The team has demonstrated city lookup, time-zone-aware calculations, nighttime target filtering, a simple sky chart, a 30-minute observation schedule, and locally saved mission checklists. The latest development session reported **8/8 passing Vitest tests**, a successful TypeScript/Vite production build, and zero Oxlint warnings/errors. These results were reported from the local working copy; check the latest clone yourself using the commands below.
+- **Location search:** Looks up a city’s coordinates and time zone using Open-Meteo geocoding.
+- **Local-time handling:** Uses Luxon to interpret the observation time in the selected location and reject ambiguous or nonexistent daylight-saving times.
+- **Celestial positions:** Uses Astronomy Engine to calculate positions for the Moon, selected planets, and a small set of bright stars.
+- **Target recommendations:** Applies astronomical-darkness, altitude, and apparent-brightness checks and recommends up to three targets.
+- **Sky chart:** Shows recommended objects on a simplified directional SVG sky chart.
+- **30-minute mission:** Provides a four-stage observing plan and a checklist.
+- **Saved progress:** Stores checklist completion for each mission in the browser's local storage.
 
-## Features implemented
+## Technology
 
-- **City-based observing:** Enter a city to retrieve latitude, longitude, and time zone using Open-Meteo geocoding.
-- **Local observation time:** Convert the chosen date/time using Luxon and the chosen city's time zone, including rejecting nonexistent and repeated daylight-saving transition times.
-- **Astronomy calculations:** Use Astronomy Engine to calculate Sun, Moon, planet, and selected bright-star positions.
-- **Beginner target selection:** Check astronomical darkness and minimum altitude during a 30-minute window, filter by apparent magnitude, then rank eligible targets by brightness. Current prototype considers the Moon, Venus, Mars, Jupiter, Saturn, Sirius, Vega, and Arcturus, and limits recommendations to three objects.
-- **Directional sky chart:** A simple top-down plot of recommended targets by azimuth and altitude, **not** a full-sky star atlas.
-- **Guided mission:** Four time blocks covering setup, orientation, observation, and review.
-- **Observation checklist:** Tick targets as observed, see progress, and retain each mission's progress in browser `localStorage` using a location/date/time-specific identifier.
-- **Automated checks:** Vitest tests for basic astronomy behavior and time-zone handling.
+| Layer | Technology |
+| --- | --- |
+| User interface | React, TypeScript, Vite, CSS |
+| Astronomy | `astronomy-engine` |
+| City lookup | Open-Meteo Geocoding API |
+| Time zones | Luxon |
+| Visualization | SVG |
+| Local persistence | Browser `localStorage` |
+| Testing and code checks | Vitest, Oxlint, TypeScript build |
+| Collaboration | Git and GitHub |
 
-## Quick start (Windows PowerShell)
+## Getting started
 
 ### Prerequisites
 
-- Node.js and npm installed (Node.js 24 was used during the project setup)
-- Git and a code editor such as VS Code
-- Internet connection for the initial package installation and city lookup
+- Git
+- Node.js and npm (Node.js 24 was used during initial development)
+- A code editor, such as VS Code
+- Internet access for installation and location lookup
+
+From a terminal in a directory where the repository should be downloaded:
 
 ```powershell
-# Clone once (skip if the SkyScout folder already exists)
 git clone https://github.com/Ri60/SkyScout.git
 cd SkyScout
-
-# Install the dependencies listed in the lockfile
 npm ci
-
-# Start the local development server
 npm run dev
 ```
 
-Open the **exact `Local:` URL** shown by Vite, often `http://localhost:5173/`. If that port is occupied, Vite may choose `5174` or another port. Leave that PowerShell window open while using the site.
+Open the `Local:` address printed by Vite, typically `http://localhost:5173/`. The port may vary. Keep the development server running while using the app.
 
-If you already cloned the repository, open its folder, run `git pull` to retrieve updates (only if your local work is safely committed), then `npm ci` and `npm run dev`.
-
-## How to use SkyScout
-
-1. Enter a city, such as `Toronto` or `Vancouver`.
-2. Choose an **observation date and local time in that city**.
-3. Click **Plan My Mission**.
-4. Review the proposed targets and the directional sky chart.
-5. Follow the 0–5, 5–10, 10–25, and 25–30 minute mission stages.
-6. Check each target as you observe it; the progress counter updates and is saved for that specific mission in the same browser.
-
-An empty result is not necessarily a bug: daytime, insufficient astronomical darkness, or no objects meeting the current filters may produce no recommendations.
-
-## Commands
+For an existing clone, safely save any local changes before updating:
 
 ```powershell
-npm run dev                         # start development server
-npm run lint                        # Oxlint checks
-npm run build                       # TypeScript + production Vite build
-npx vitest run                      # run all automated tests once
-npx vitest run src/astronomy.test.ts # astronomy tests
-npx vitest run src/timezone.test.ts  # time-zone tests
-npm run preview                     # preview a completed production build
+git pull origin main
+npm ci
+npm run dev
 ```
 
-The Vitest commands work when Vitest is installed as a development dependency in your current checkout (`npm ci`). The latest session reported four astronomy tests and four time-zone tests passing.
+## Using the application
 
-## Main source files
+1. Enter an observing city and verify the resolved location.
+2. Select an observation date and **local time in that city**.
+3. Generate a mission.
+4. Review the recommended targets, their directions, and the sky chart.
+5. Follow the observation schedule and mark completed targets.
 
-| File | Responsibility |
+An empty result can be expected during daytime or when no catalogued object meets the current filters.
+
+## Running checks
+
+```powershell
+npx vitest run       # Automated tests
+npm run lint        # Lint checks
+npm run build       # Type checking and production build
+npm run preview     # Preview the built application
+```
+
+At the time of documentation, the local development run reported **eight passing tests** (four astronomy-related and four time-zone-related), a successful build, and no lint findings. Run the checks on the current revision to verify its status.
+
+## Project structure
+
+| Path | Purpose |
 | --- | --- |
-| `src/App.tsx` | Form input, city lookup, mission generation, error/loading display, renders results, chart, and mission |
-| `src/location.ts` | Open-Meteo city-name lookup; returns coordinates and time zone |
-| `src/timezone.ts` | Converts an entered local time to a JavaScript `Date`; rejects daylight-saving gaps and repeated times |
-| `src/astronomy.ts` | Astronomy Engine calculations, target filtering, ranking, and descriptions |
-| `src/SkyChart.tsx` | SVG directional sky chart of recommended targets |
-| `src/Mission.tsx` | Observation schedule, 16-point compass labels, checkboxes, saved mission progress |
+| `src/App.tsx` | Form, application state, location and time handling, mission generation |
+| `src/location.ts` | Open-Meteo city lookup |
+| `src/timezone.ts` | Local date/time conversion and daylight-saving checks |
+| `src/astronomy.ts` | Position calculations, target filtering, and ranking |
+| `src/SkyChart.tsx` | Directional SVG chart |
+| `src/Mission.tsx` | Observation schedule, target guidance, checklist, persistence |
 | `src/App.css`, `src/index.css` | Styling |
-| `src/astronomy.test.ts` | Astronomy validation and representative daytime/nighttime tests |
-| `src/timezone.test.ts` | Time-zone and daylight-saving tests |
-| `astronomy-test.mjs` | Earlier standalone astronomy experiment; not the main website implementation |
+| `src/astronomy.test.ts` | Astronomy behavior tests |
+| `src/timezone.test.ts` | Time-zone behavior tests |
+| `TEAMMATE_GUIDE.md` | Setup, architecture, testing, and contribution guide |
 
-## How the app works
+## Recommendation logic
 
 ```text
 City + local date/time
-   │
-   ├─ location.ts → coordinates + IANA time zone
-   ├─ timezone.ts → exact observation instant (Date)
-   └─ astronomy.ts → positions + darkness/altitude/brightness rules
-                          │
-                          ▼
-                 ranked recommended targets
-                   ├─ App.tsx → results
-                   ├─ SkyChart.tsx → directional chart
-                   └─ Mission.tsx → 30-minute plan + local checklist
+         |
+         v
+Location lookup -> latitude, longitude, time zone
+         |
+         v
+Time-zone conversion -> observation instant
+         |
+         v
+Astronomy Engine -> Sun and target positions
+         |
+         v
+Darkness / altitude / brightness filtering
+         |
+         v
+Up to three ranked targets
+         |
+         +--> Directional sky chart
+         +--> Guided mission and saved checklist
 ```
 
-**Altitude** describes height above the horizon (0° = horizon, 90° = overhead). **Azimuth** describes compass bearing from north, clockwise (90° = east, 180° = south, 270° = west). **Apparent magnitude** is an astronomical brightness scale in which **smaller values mean brighter objects**.
+The current prototype samples the beginning, midpoint, and end of a 30-minute observing window. It uses an approximate astronomical-darkness cutoff of Sun altitude below **−18°**, target altitude of at least **20°**, and apparent magnitude no greater than **1.5**. Lower magnitudes indicate brighter objects. These are prototype selection rules, **not a guarantee of visibility**.
 
-### Prototype recommendation rules
+## Limitations
 
-The current updated implementation uses the following initial thresholds (subject to further validation):
+- The geocoder currently selects the first matching city; locations with similar names can be confused.
+- The object catalogue is intentionally limited.
+- Clouds, light pollution, atmospheric conditions, obstructions, and local horizon visibility are not modelled.
+- The chart displays recommended targets rather than a complete sky atlas.
+- The observation schedule is a fixed guide, not a live timer.
+- Checklist data is browser-local and does not synchronize across devices.
+- Astronomical outputs have not yet undergone comprehensive independent reference validation.
+- Existing automated tests cover core cases, not all UI interactions or edge conditions.
 
-- Sun below **−18°** at 0, 15, and 30 minutes (astronomical darkness).
-- Recommended object at least **20° above the horizon** at each sampled time.
-- Apparent magnitude no greater than **1.5**.
-- Rank by lower/brighter magnitude and return at most **3** targets.
+## Contributing
 
-The star catalogue is intentionally small. Astronomical suitability **does not guarantee actual visibility**: clouds, trees, buildings, light pollution, atmospheric conditions, and the observer's experience matter.
-
-## Current limitations
-
-- **City ambiguity:** Geocoding currently takes the first result. A city name may match a location the user did not intend; verify the displayed city before trusting results.
-- **Incomplete target catalogue:** Only a few stars and major solar-system objects are considered.
-- **Selection model:** Brightness and altitude are proxies, not a complete visibility model. Independent numerical reference validation remains incomplete.
-- **Weather/obstructions:** No cloud forecast, local skyline, or light-pollution integration.
-- **Chart:** Shows only recommended objects; it is not a photograph, 3D simulation, or comprehensive star map.
-- **Mission timing:** Time blocks are fixed instructions, not a live timed scheduler.
-- **Storage:** `localStorage` lives in one browser/device; there are no accounts or cross-device synchronization. It may be lost if browser data is cleared.
-- **Time-zone transitions:** Ambiguous and nonexistent local times are rejected, rather than offering a choice between repeated-hour offsets.
-- **Automated tests:** Existing tests cover a limited set of expected behaviors; they are not full UI or independent astronomical-reference tests.
-
-## Testing and contributing
-
-Before committing a change:
+Contributions should be made on feature branches and reviewed through GitHub pull requests.
 
 ```powershell
+git switch main
+git pull origin main
+git switch -c feature/short-description
+# Implement and test the change
 npx vitest run
 npm run lint
 npm run build
-git status
+git add .
+git commit -m "Describe the change"
+git push -u origin feature/short-description
 ```
 
-Use a feature branch for team changes, explain what changed in your commit, and open a pull request for review before merging into `main`. Avoid editing `node_modules/` or committing generated `dist/` files. See **TEAMMATE_GUIDE.md** for a beginner-friendly walkthrough and troubleshooting help.
+Open a pull request and include the change summary, test results, and any known limitations. Avoid committing generated `dist/` or `node_modules/` directories. See [TEAMMATE_GUIDE.md](TEAMMATE_GUIDE.md) for more detailed instructions.
 
-## Planned next work
+## Next priorities
 
-1. Validate multiple star and planet positions against an independent reference at several cities, times, and date boundaries.
-2. Improve ambiguous city resolution (show the user matching places).
-3. Expand the sourced bright-star catalogue and make selection more understandable to beginners.
-4. Add automated tests for persistence, UI state changes, and geocoding errors.
-5. Improve accessibility, responsive design, and useful guidance when no suitable targets are found.
+- Verify celestial positions against independent astronomy references.
+- Improve city selection for ambiguous search results.
+- Expand and validate the bright-object catalogue.
+- Add UI, storage, and error-handling tests.
+- Refine accessibility and the no-target user experience.
 
-## Team and mentor notes
+## Team
 
-SkyScout is a learning/team project. An astronomy library performs the underlying celestial mechanics; the team is responsible for the recommendation logic, mission flow, interface, chart integration, observation tracking, testing, and documentation. The MVP intentionally excludes telescope controls, elaborate 3D graphics, a large deep-sky catalogue, social features, and weather integration.
+SkyScout is a collaborative software project. Repository access is managed through GitHub collaborators; contribution history is recorded through Git commits and pull requests. Team member details can be maintained separately from public project documentation.
+
+## Scope
+
+SkyScout is intended as a beginner-oriented prototype, not a safety-critical navigation or professional astronomical prediction tool. It does not currently provide telescope control, weather forecasts, an exhaustive star map, or guaranteed observing conditions.
