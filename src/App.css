@@ -214,3 +214,84 @@ body {
   line-height: 1.7;
   margin: 12px 0 18px;
 }
+
+/* =====================================
+   SkyScout Mobile & Accessibility Fixes
+   ===================================== */
+
+/* Keep content readable on all screens */
+.app {
+  justify-content: flex-start;
+}
+
+.app .results,
+.app .resolved-location,
+.app .error-message {
+  width: 100%;
+  max-width: 650px;
+}
+
+/* Improve astronomy results */
+.app .results {
+  margin-top: 28px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid #34466c;
+  border-radius: 16px;
+}
+
+/* Make errors more noticeable */
+.app .error-message {
+  color: #ffd1d1;
+  padding: 12px;
+  border: 1px solid #e09393;
+  border-radius: 8px;
+}
+
+/* Accessibility: show keyboard focus */
+.app input:focus-visible,
+.app button:focus-visible,
+.mission-card input:focus-visible {
+  outline: 3px solid #f5d781;
+  outline-offset: 3px;
+}
+
+/* Loading state */
+.app button:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+/* Phones and smaller devices */
+@media (max-width: 600px) {
+  .app {
+    padding: 24px 14px 40px;
+  }
+
+  .app h1 {
+    font-size: clamp(2.2rem, 10vw, 3.2rem);
+  }
+
+  .app h2 {
+    font-size: 1.45rem;
+  }
+
+  .app form {
+    padding: 18px;
+    margin-top: 15px;
+  }
+
+  .mission-card,
+  .schedule-step {
+    padding: 16px;
+  }
+
+  .mission-card label {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .sky-chart svg {
+    max-width: 100%;
+  }
+}
