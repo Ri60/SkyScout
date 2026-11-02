@@ -1,52 +1,78 @@
 
 import { useState } from 'react'
 import { getVisibleObjects, type SkyTarget } from './astronomy'
+import { searchLocation, type LocationResult } from './location'
+import { getObservationDate } from './timezone'
 import Mission from './Mission'
 import SkyChart from './SkyChart'
 import './App.css'
 
 function App() {
-  const [location, setLocation] = useState('Oshawa, Ontario')
+  const [location, setLocation] = useState('Oshawa')
   const [date, setDate] = useState('')
   const [time, setTime] = useState('')
+
   const [targets, setTargets] = useState<SkyTarget[] | null>(null)
   const [missionId, setMissionId] = useState('')
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
+
+  const [resolvedLocation, setResolvedLocation] =
+    useState<LocationResult | null>(null)
+
+  // Generate astronomy recommendations for the selected city
+  async function handleSubmit(
+    event: React.FormEvent<HTMLFormElement>
+  ) {
     event.preventDefault()
 
     if (!date || !time) return
 
-    const locationName = location.trim().toLowerCase()
+    setLoading(true)
+    setError('')
+    setTargets(null)
+    setResolvedLocation(null)
 
-    // Oshawa is the supported test location
-    if (
-      locationName !== 'oshawa' &&
-      locationName !== 'oshawa, ontario'
-    ) {
-      alert('Only Oshawa is supported in this test version.')
-      return
+    try {
+      // Convert the city name into coordinates and a time zone
+      const place = await searchLocation(location)
+
+      // Interpret the observation time in the city's time zone
+      const observationDate = getObservationDate(
+        date,
+        time,
+        place.timezone
+      )
+
+      if (Number.isNaN(observationDate.getTime())) {
+        throw new Error('Please select a valid date and time.')
+      }
+
+      // Calculate objects using the city's coordinates
+      const results = getVisibleObjects(
+        observationDate,
+        place.latitude,
+        place.longitude
+      )
+
+      // Unique identifier for each observing session
+      const newMissionId =
+        `${place.latitude}-${place.longitude}-${date}-${time}`
+
+      setMissionId(newMissionId)
+      setResolvedLocation(place)
+      setTargets(results)
+
+    } catch (err) {
+      setError(
+        err instanceof Error
+          ? err.message
+          : 'Something went wrong. Please try again.'
+      )
+    } finally {
+      setLoading(false)
     }
-
-    const observationDate = new Date(`${date}T${time}:00`)
-
-    if (Number.isNaN(observationDate.getTime())) {
-      alert('Please select a valid date and time.')
-      return
-    }
-
-    // Calculate visible objects for Oshawa
-    const results = getVisibleObjects(
-      observationDate,
-      43.8971,
-      -78.8658
-    )
-
-    // Create a unique identifier for this observing session
-    const newMissionId = `oshawa-${date}-${time}`
-
-    setMissionId(newMissionId)
-    setTargets(results)
   }
 
   return (
@@ -67,6 +93,7 @@ function App() {
         <input
           id="location"
           type="text"
+          placeholder="e.g. Toronto"
           value={location}
           onChange={(e) => setLocation(e.target.value)}
           required
@@ -90,11 +117,27 @@ function App() {
           required
         />
 
-        <button type="submit">
-          Plan My Mission
+        <button type="submit" disabled={loading}>
+          {loading ? 'Finding your sky...' : 'Plan My Mission'}
         </button>
 
       </form>
+
+      {/* Location lookup errors */}
+      {error && (
+        <p role="alert" className="error-message">
+          {error}
+        </p>
+      )}
+
+      {/* Confirm the selected observing location */}
+      {resolvedLocation && (
+        <p className="resolved-location">
+          Observing from: {resolvedLocation.name}
+          {' | '}
+          Time zone: {resolvedLocation.timezone}
+        </p>
+      )}
 
       {/* Astronomy results */}
       {targets !== null && (
@@ -108,7 +151,7 @@ function App() {
               Try another observing time.
             </p>
           ) : (
-            targets.map((target) => (
+            targets.map(target => (
               <div key={target.name}>
 
                 <h3>{target.name}</h3>
@@ -138,7 +181,7 @@ function App() {
         <SkyChart targets={targets} />
       )}
 
-      {/* Guided mission with separate saved progress */}
+      {/* Guided mission with separately saved progress */}
       {targets !== null && targets.length > 0 && (
         <Mission
           key={missionId}

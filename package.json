@@ -11,10 +11,12 @@
   },
   "dependencies": {
     "astronomy-engine": "^2.1.19",
+    "luxon": "^3.7.2",
     "react": "^19.3.1",
     "react-dom": "^19.3.1"
   },
   "devDependencies": {
+    "@types/luxon": "^3.7.6",
     "@types/node": "^24.19.2",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
