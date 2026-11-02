@@ -1,14 +1,29 @@
 
 export type LocationResult = {
+  id: number
   name: string
   latitude: number
   longitude: number
   timezone: string
 }
 
-export async function searchLocation(
+type GeocodingResult = {
+  id: number
+  name: string
+  admin1?: string
+  country?: string
+  latitude: number
+  longitude: number
+  timezone: string
+}
+
+type GeocodingResponse = {
+  results?: GeocodingResult[]
+}
+
+export async function searchLocations(
   city: string
-): Promise<LocationResult> {
+): Promise<LocationResult[]> {
   const query = city.trim()
 
   if (!query) {
@@ -20,28 +35,35 @@ export async function searchLocation(
   )
 
   url.searchParams.set('name', query)
-  url.searchParams.set('count', '1')
+  url.searchParams.set('count', '10')
   url.searchParams.set('language', 'en')
   url.searchParams.set('format', 'json')
 
   const response = await fetch(url)
 
   if (!response.ok) {
-    throw new Error('Could not connect to the location service.')
+    throw new Error(
+      'Could not connect to the location service.'
+    )
   }
 
-  const data = await response.json()
+  const data: GeocodingResponse = await response.json()
 
-  if (!data.results || data.results.length === 0) {
-    throw new Error('Location not found. Try another city name.')
+  if (!data.results?.length) {
+    throw new Error(
+      'Location not found. Try another city name.'
+    )
   }
 
-  const place = data.results[0]
-
-  return {
-    name: `${place.name}, ${place.country}`,
+  return data.results.map(place => ({
+    id: place.id,
+    name: [
+      place.name,
+      place.admin1,
+      place.country
+    ].filter(Boolean).join(', '),
     latitude: place.latitude,
     longitude: place.longitude,
     timezone: place.timezone
-  }
+  }))
 }

@@ -295,3 +295,20 @@ body {
     max-width: 100%;
   }
 }
+
+/* City-selection dropdown */
+.app select {
+  width: 100%;
+  padding: 13px;
+  margin-bottom: 8px;
+  background: #111c36;
+  color: white;
+  border: 1px solid #465b85;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.app select:focus-visible {
+  outline: 3px solid #f5d781;
+  outline-offset: 3px;
+}
