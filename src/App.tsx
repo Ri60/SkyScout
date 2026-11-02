@@ -1,5 +1,5 @@
 
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { getVisibleObjects, type SkyTarget } from './astronomy'
 import { searchLocation, type LocationResult } from './location'
 import { getObservationDate } from './timezone'
@@ -21,24 +21,48 @@ function App() {
   const [resolvedLocation, setResolvedLocation] =
     useState<LocationResult | null>(null)
 
-  // Generate astronomy recommendations for the selected city
+  // Identifies the latest request so outdated searches are ignored.
+  const requestId = useRef(0)
+
+  // Clear outdated results whenever the observation inputs change.
+  function clearPreviousMission() {
+    requestId.current += 1
+    setTargets(null)
+    setMissionId('')
+    setResolvedLocation(null)
+    setError('')
+    setLoading(false)
+  }
+
+  // Generate astronomy recommendations for the selected city.
   async function handleSubmit(
     event: React.FormEvent<HTMLFormElement>
   ) {
     event.preventDefault()
 
-    if (!date || !time) return
+    if (!location.trim() || !date || !time) {
+      setError('Please enter a location, date, and time.')
+      return
+    }
+
+    const currentRequest = ++requestId.current
 
     setLoading(true)
     setError('')
     setTargets(null)
+    setMissionId('')
     setResolvedLocation(null)
 
     try {
-      // Convert the city name into coordinates and a time zone
+      // Convert the city name into coordinates and a time zone.
       const place = await searchLocation(location)
 
-      // Interpret the observation time in the city's time zone
+      // Ignore responses from previous searches.
+      if (currentRequest !== requestId.current) {
+        return
+      }
+
+      // Interpret the observation time in the city's time zone.
       const observationDate = getObservationDate(
         date,
         time,
@@ -49,29 +73,41 @@ function App() {
         throw new Error('Please select a valid date and time.')
       }
 
-      // Calculate objects using the city's coordinates
+      // Calculate objects using the city's coordinates.
       const results = getVisibleObjects(
         observationDate,
         place.latitude,
         place.longitude
       )
 
-      // Unique identifier for each observing session
+      // Unique identifier for this observing session.
       const newMissionId =
         `${place.latitude}-${place.longitude}-${date}-${time}`
+
+      // Only display results from the latest request.
+      if (currentRequest !== requestId.current) {
+        return
+      }
 
       setMissionId(newMissionId)
       setResolvedLocation(place)
       setTargets(results)
 
     } catch (err) {
+      if (currentRequest !== requestId.current) {
+        return
+      }
+
       setError(
         err instanceof Error
           ? err.message
           : 'Something went wrong. Please try again.'
       )
+
     } finally {
-      setLoading(false)
+      if (currentRequest === requestId.current) {
+        setLoading(false)
+      }
     }
   }
 
@@ -95,7 +131,10 @@ function App() {
           type="text"
           placeholder="e.g. Toronto"
           value={location}
-          onChange={(e) => setLocation(e.target.value)}
+          onChange={(e) => {
+            setLocation(e.target.value)
+            clearPreviousMission()
+          }}
           required
         />
 
@@ -104,7 +143,10 @@ function App() {
           id="date"
           type="date"
           value={date}
-          onChange={(e) => setDate(e.target.value)}
+          onChange={(e) => {
+            setDate(e.target.value)
+            clearPreviousMission()
+          }}
           required
         />
 
@@ -113,7 +155,10 @@ function App() {
           id="time"
           type="time"
           value={time}
-          onChange={(e) => setTime(e.target.value)}
+          onChange={(e) => {
+            setTime(e.target.value)
+            clearPreviousMission()
+          }}
           required
         />
 
