@@ -2,9 +2,7 @@
 
 **A beginner-friendly stargazing mission planner.** SkyScout turns a city, observation date, and local time into a short list of potential naked-eye sky targets, a directional sky chart, and a guided **30-minute observing mission**.
 
-**Repository:** [Ri60/SkyScout](https://github.com/Ri60/SkyScout)  
-**Stage:** Working MVP; ongoing improvements and validation  
-**Team onboarding:** [TEAMMATE_GUIDE.md](TEAMMATE_GUIDE.md)
+
 
 > **Branch note (November 2026):** The `main` branch contains the working MVP and the first reliability/mobile improvements. The **city-selection dropdown and React UI tests** have been implemented and tested locally on `feature/final-polish`, but were **not yet merged** when this document was prepared. The test count and feature list below distinguish those versions.
 
