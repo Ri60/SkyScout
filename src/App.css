@@ -312,3 +312,32 @@ body {
   outline: 3px solid #f5d781;
   outline-offset: 3px;
 }
+
+/* Separate planning and exploration screens */
+.page-steps { display: flex; gap: 24px; margin: 12px 0; color: #bbc5dd; }
+.page-steps span { padding: 8px 16px; border-radius: 24px; border: 1px solid #34466c; }
+.page-steps [aria-current="step"] { background: #718bff; color: #07112b; font-weight: bold; }
+.app h1:focus { outline: none; }
+
+/* Geographic map and interactive horizon preview */
+.panel { width: 100%; max-width: 1080px; margin: 28px auto 0; padding: 26px; background: rgba(255,255,255,.045); border: 1px solid #34466c; border-radius: 20px; text-align: left; }
+.app .panel h2 { margin: 4px 0 12px; }
+.section-header { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+.app .eyebrow { margin: 0; color: #91a8ff; font-size: .78rem; text-transform: uppercase; letter-spacing: .14em; }
+.panel a { color: #b9caff; text-underline-offset: 3px; }
+.location-map iframe { display: block; width: 100%; height: 360px; border: 1px solid #465b85; border-radius: 14px; background: #111c36; }
+.app .fine-print { font-size: .85rem; line-height: 1.6; }
+.sky-badge { border: 1px solid #465b85; border-radius: 24px; padding: 8px 14px; color: #d6e2ff; }
+.sky-toolbar { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin: 16px 0; }
+.sky-toolbar button { margin: 0; padding: 9px 16px; font-size: .9rem; }
+.night-canvas { display: block; width: 100%; height: auto; border-radius: 16px; border: 1px solid #465b85; cursor: grab; touch-action: pan-y; }
+.night-canvas:active { cursor: grabbing; }
+.sky-controls { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px 28px; margin-top: 22px; }
+.sky-controls label { display: block; }
+.app .sky-controls input[type="range"] { width: 100%; padding: 0; margin: 12px 0; accent-color: #91a8ff; }
+.sky-toggles { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+.sky-toggles label { display: flex; gap: 8px; align-items: center; }
+.app .sky-toggles input[type="checkbox"] { width: 18px; height: 18px; margin: 0; accent-color: #91a8ff; }
+.app .sky-notice { border-left: 3px solid #f5d781; padding-left: 12px; color: #f5d781; }
+@media (max-width: 600px) { .panel { padding: 16px; } .sky-controls { grid-template-columns: 1fr; } .location-map iframe { height: 280px; } }
+@media (max-width: 600px) { .night-canvas text { font-size: 28px; } }

@@ -179,3 +179,35 @@ Then open a pull request, describe the changes and test output, and obtain any r
 - [Mentor demonstration](MENTOR_DEMO.md) — sample live walkthrough and reported validation.
 
 SkyScout is a prototype for educational and recreational use; it does not guarantee the visibility or safety of a particular observing session.
+## Location map and horizon sky preview (November 2026)
+
+The mission page now includes an OpenStreetMap embed centered on the selected
+city's geocoded coordinates, plus a larger-map link. The marker is the city
+reference position, not GPS or a verified observing site. The map requires
+internet access and does not identify dark-sky sites or model light pollution.
+
+The new NightSky component renders a perspective horizon simulation for the
+selected city's coordinates and local observation time. Use direction buttons,
+horizontal dragging, elevation and field-of-view sliders, constellation/label
+toggles, and the target buttons to explore. A 0–30 minute slider previews the
+mission interval without changing the mission checklist's original time.
+
+Star and constellation data are bundled locally from D3-Celestial:
+https://github.com/ofrohn/d3-celestial (stars.6.json, 5,044 stars;
+constellations.lines.json). Catalogue coordinates are J2000; Astronomy Engine
+converts them to the observer's horizontal coordinates, including precession
+and normal atmospheric refraction. Star8 is used as a scratch slot so the
+recommendation catalogue's Star1–3 remain independent. The downloaded data's
+BSD-3-Clause notice is retained in CELESTIAL-LICENSE.txt.
+
+The preview includes above-horizon solar-system objects, brightness-scaled
+stars and approximate colour indices. Object sizes are enlarged for clarity.
+The flat horizon is illustrative. Weather, terrain, buildings, light pollution,
+phone orientation and camera/AR are not modeled. The Moon's illuminated
+fraction is displayed numerically; its disk is an identification symbol.
+
+New files: src/LocationMap.tsx, src/NightSky.tsx, src/skyView.ts,
+src/skyView.test.ts, src/data/*.json, CELESTIAL-LICENSE.txt.
+Updated: src/App.tsx, src/App.css, tsconfig.app.json, README.md.
+
+Run `npm run build` and `npx vitest run --environment jsdom` to validate.

@@ -1,13 +1,36 @@
 
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { getVisibleObjects, type SkyTarget } from './astronomy'
 import { searchLocations, type LocationResult } from './location'
 import { getObservationDate } from './timezone'
 import Mission from './Mission'
 import SkyChart from './SkyChart'
+import LocationMap from './LocationMap'
+import NightSky from './NightSky'
 import './App.css'
 
 function App() {
+  const [targets, setTargets] = useState<SkyTarget[] | null>(null)
+  const [page, setPage] = useState<'setup' | 'mission'>('setup')
+  const pageHeading = useRef<HTMLHeadingElement>(null)
+
+  function navigate(next: 'setup' | 'mission') {
+    window.location.hash = next === 'mission' ? '/mission' : '/plan'
+    setPage(next)
+  }
+
+  useEffect(() => {
+    function syncPage() {
+      setPage(window.location.hash === '#/mission' && targets !== null ? 'mission' : 'setup')
+    }
+    window.addEventListener('hashchange', syncPage)
+    return () => window.removeEventListener('hashchange', syncPage)
+  }, [targets])
+
+  useEffect(() => {
+    pageHeading.current?.focus()
+  }, [page])
+
   const [location, setLocation] = useState('Oshawa')
   const [date, setDate] = useState('')
   const [time, setTime] = useState('')
@@ -15,7 +38,6 @@ function App() {
   const [matches, setMatches] = useState<LocationResult[]>([])
   const [selectedId, setSelectedId] = useState('')
 
-  const [targets, setTargets] = useState<SkyTarget[] | null>(null)
   const [missionId, setMissionId] = useState('')
   const [resolvedLocation, setResolvedLocation] =
     useState<LocationResult | null>(null)
@@ -24,6 +46,33 @@ function App() {
   const [error, setError] = useState('')
 
   const requestId = useRef(0)
+
+  // Restore the last mission when its page is refreshed in this tab.
+  useEffect(() => {
+    if (window.location.hash !== '#/mission') return
+    try {
+      const saved = JSON.parse(sessionStorage.getItem('skyscout-current-mission') || 'null')
+      if (!saved || typeof saved.date !== 'string' || typeof saved.time !== 'string' ||
+          typeof saved.place?.name !== 'string' || typeof saved.place?.timezone !== 'string') {
+        throw new Error('No saved mission')
+      }
+      const place: LocationResult = saved.place
+      const instant = getObservationDate(saved.date, saved.time, place.timezone)
+      const restored = getVisibleObjects(instant, place.latitude, place.longitude)
+      setDate(saved.date)
+      setTime(saved.time)
+      setLocation(place.name)
+      setMatches([place])
+      setSelectedId(String(place.id))
+      setResolvedLocation(place)
+      setTargets(restored)
+      setMissionId(`${place.latitude}-${place.longitude}-${saved.date}-${saved.time}`)
+      setPage('mission')
+    } catch {
+      window.history.replaceState(null, '', '#/plan')
+      setPage('setup')
+    }
+  }, [])
 
   function clearMission() {
     requestId.current += 1
@@ -115,6 +164,10 @@ function App() {
       setMissionId(newMissionId)
       setResolvedLocation(place)
       setTargets(results)
+      try {
+        sessionStorage.setItem('skyscout-current-mission', JSON.stringify({ place, date, time }))
+      } catch { /* Navigation still works when browser storage is unavailable. */ }
+      navigate('mission')
     } catch (err) {
       setError(
         err instanceof Error
@@ -126,9 +179,14 @@ function App() {
 
   return (
     <main className="app">
-      <h1>✨ SkyScout</h1>
+      <h1 ref={pageHeading} tabIndex={-1}>✨ SkyScout</h1>
+      <nav aria-label="Mission steps" className="page-steps">
+        <span aria-current={page === 'setup' ? 'step' : undefined}>1. Plan</span>
+        <span aria-current={page === 'mission' ? 'step' : undefined}>2. Explore</span>
+      </nav>
       <p>Your personal guide to the night sky.</p>
 
+      {page === 'setup' && (<>
       <h2>Plan Your Stargazing Mission</h2>
       <p>Discover the night sky with a guided 30-minute mission.</p>
 
@@ -209,6 +267,12 @@ function App() {
         </p>
       )}
 
+      </>)}
+
+      {page === 'mission' && (<>
+      <button type="button" onClick={() => navigate('setup')}>← Edit details</button>
+      <h2>Your Stargazing Mission</h2>
+      <p>{date} at {time} · Local time at your observing location</p>
       {resolvedLocation && (
         <p className="resolved-location">
           Observing from: {resolvedLocation.name}
@@ -216,6 +280,11 @@ function App() {
           Time zone: {resolvedLocation.timezone}
         </p>
       )}
+
+      {resolvedLocation && targets !== null && (<>
+        <LocationMap place={resolvedLocation} />
+        <NightSky key={missionId} place={resolvedLocation} date={date} time={time} targets={targets} />
+      </>)}
 
       {targets !== null && (
         <section className="results">
@@ -254,6 +323,7 @@ function App() {
           missionId={missionId}
         />
       )}
+      </>)}
     </main>
   )
 }

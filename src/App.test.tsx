@@ -43,6 +43,8 @@ vi.mock('./astronomy', () => ({
 afterEach(() => {
   cleanup()
   localStorage.clear()
+  sessionStorage.clear()
+  window.history.replaceState(null, '', '/')
 })
 
 describe('SkyScout interface', () => {
@@ -76,8 +78,8 @@ describe('SkyScout interface', () => {
     })).toBeInTheDocument()
   })
 
-  it('clears old results when the location changes', async () => {
-    render(<App />)
+  it('opens a mission page, restores it on refresh, and preserves details when editing', async () => {
+    const { unmount } = render(<App />)
 
     fireEvent.click(screen.getByRole('button', { name: 'Find Locations' }))
 
@@ -98,6 +100,15 @@ describe('SkyScout interface', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Plan My Mission' }))
 
     expect(screen.getByText('Your SkyScout Results')).toBeInTheDocument()
+
+    expect(screen.queryByLabelText('Your Location')).not.toBeInTheDocument()
+    expect(window.location.hash).toBe('#/mission')
+    unmount()
+    render(<App />)
+    expect(screen.getByText('Your SkyScout Results')).toBeInTheDocument()
+    expect(screen.queryByLabelText('Your Location')).not.toBeInTheDocument()
+    fireEvent.click(screen.getByRole('button', { name: '← Edit details' }))
+    expect(screen.getByLabelText('Observation Time')).toHaveValue('21:00')
 
     fireEvent.change(screen.getByLabelText('Your Location'), {
       target: { value: 'Toronto' }
