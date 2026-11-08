@@ -52,6 +52,7 @@ const descriptions: Record<string, string> = {
 
 // Keep existing fields for compatibility
 export type SkyTarget = {
+  id?: string
   name: string
   altitude: number
   azimuth: number
