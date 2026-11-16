@@ -9,6 +9,7 @@ import Mission from './Mission'
 import LocationMap from './LocationMap'
 import SkyChart from './SkyChart'
 import ObjectExplorer from './ObjectExplorer'
+import ObservationPlanner from './ObservationPlanner'
 import { Icon } from './Icons'
 
 export type Observation = {
@@ -37,7 +38,7 @@ export default function ObservationPage({
     [date, time, place]
   )
   const objects = useMemo(() => makeCatalogue(sky), [sky])
-  const [tab, setTab] = useState<'discover' | 'mission' | 'location'>(
+  const [tab, setTab] = useState<'discover' | 'mission' | 'location'| 'planner'>(
     'discover'
   )
   const [filters, setFilters] = useState({ ...DEFAULT_FILTERS })
@@ -83,7 +84,7 @@ export default function ObservationPage({
   }
   function switchTabWithKeyboard(event: KeyboardEvent<HTMLDivElement>) {
     if ((event.target as HTMLElement).getAttribute('role') !== 'tab') return
-    const tabs = ['discover', 'mission', 'location'] as const
+    const tabs = ['discover', 'mission', 'location', 'planner'] as const
     const index = tabs.indexOf(tab)
     const next =
       event.key === 'ArrowRight'
@@ -93,7 +94,7 @@ export default function ObservationPage({
           : event.key === 'Home'
             ? tabs[0]
             : event.key === 'End'
-              ? tabs[2]
+              ? tabs[3]
               : null
     if (!next) return
     event.preventDefault()
@@ -176,6 +177,16 @@ export default function ObservationPage({
           onClick={() => setTab('location')}
         >
           <Icon name="pin" size={17} /> Observing location
+        </button>
+        <button
+          role="tab"
+          id="tab-planner"
+          tabIndex={tab === 'planner' ? 0 : -1}
+          aria-selected={tab === 'planner'}
+          aria-controls="observation-panel"
+          onClick={() => setTab('planner')}
+        >
+          <Icon name="spark" size={17} /> Best time to observe
         </button>
       </div>
       <div
@@ -343,6 +354,12 @@ export default function ObservationPage({
               </>
             )}
           </div>
+        )}
+        {tab === 'planner' && (
+          <ObservationPlanner
+            place={place}
+            availableObjects={objects}
+          />
         )}
         {tab === 'location' && (
           <div className="location-page">
