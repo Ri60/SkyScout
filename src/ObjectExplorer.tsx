@@ -9,6 +9,7 @@ import {
   type SkyObject
 } from './catalogue'
 import { Icon } from './Icons'
+import ObjectInfoModal from './ObjectInfoModal'
 
 type ExplorerProps = {
   objects: SkyObject[]
@@ -30,6 +31,7 @@ export default function ObjectExplorer({
   onLocate
 }: ExplorerProps) {
   const [shown, setShown] = useState(12)
+  const [infoObject, setInfoObject] = useState<SkyObject | null>(null)
   const results = filterCatalogue(objects, filters)
   function update(patch: Partial<CatalogueFilters>) {
     setShown(12)
@@ -281,6 +283,13 @@ export default function ObjectExplorer({
                         </span>
                       </div>
                       <button
+                        className="info-button"
+                        aria-label={`More info about ${object.name}`}
+                        onClick={() => setInfoObject(object)}
+                      >
+                        <Icon name="info" size={16} /> More info
+                      </button>
+                      <button
                         className="locate-button"
                         onClick={() => onLocate(object)}
                       >
@@ -307,6 +316,9 @@ export default function ObjectExplorer({
           )}
         </div>
       </div>
+      {infoObject && (
+        <ObjectInfoModal object={infoObject} onClose={() => setInfoObject(null)} />
+      )}
     </section>
   )
 }
