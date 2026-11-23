@@ -16,6 +16,17 @@ Internet access is required for city lookup and geographic map tiles. The star
 catalogue and astronomy calculations run locally in the browser. The heavier
 exploration module loads only when the observing page is opened.
 
+## Dependencies
+
+Project dependencies are managed through `package.json` and `package-lock.json`. Run `npm ci` to install them.
+
+Additional mapping packages used by the project:
+
+- `leaflet` and `react-leaflet` for the interactive map.
+- `@types/leaflet` for Leaflet TypeScript definitions (development dependency).
+
+The DarkSky Finder uses locally bundled coordinates and certified location data. It does not require an API key or additional package installation.
+
 ## The experience
 
 1. **Plan a night:** search for a city using the search button, choose the
@@ -36,6 +47,7 @@ exploration module loads only when the observing page is opened.
 6. **Observing location:** a separate tab contains the city-centred
    OpenStreetMap and practical site-selection tips. The marker is a city
    reference location, not GPS or a verified dark-sky site.
+7. **DarkSky Finder:** browse officially certified DarkSky locations, including parks, reserves, sanctuaries, communities, urban places, and approved lodging. The finder uses the bundled coordinates for 226 certified locations and displays the five nearest to the selected location.
 
 The current observation can be restored on refreshing `#/mission` in the same
 tab through sessionStorage. Edit details retains the form values. Invalid or
@@ -62,6 +74,9 @@ ambiguous daylight-saving times are rejected; stale city searches are ignored.
   objects from its smaller catalogue after sampling minutes 0, 15, and 30.
   Each must stay above 20°, magnitude ≤1.5, with the Sun below −18°.
   This is separate from browsing the full catalogue and custom shortlisting.
+- **Certified DarkSky locations:** the directory contains officially certified
+  locations only. Coordinates are available for 226 entries; locations without
+  verified coordinates are excluded from the finder.
 
 Above-horizon positions do not guarantee visibility. Weather, obstructions,
 terrain, Moon glare, and light pollution are not measured. Custom mission
@@ -88,6 +103,11 @@ identification. No camera/AR or phone-compass tracking is implemented.
 | `src/astronomy.ts` | Original three-target recommendation rules |
 | `src/Icons.tsx`, `src/App.css`, `src/index.css` | Visual system and responsive layouts |
 | `src/data/` | Bundled stars, star names, constellation names, and line data |
+| `src/darkSkyTypes.ts` | DarkSky directory, category, and coordinate types |
+| `src/darkSkyDirectory.ts` | Officially certified DarkSky location directory |
+| `src/darkSkyCoordinates.ts` | Coordinates for certified DarkSky locations |
+| `src/darkSkyLocations.ts` | Combines certified entries with available coordinates |
+| `src/DarkSkyFinder.tsx` | Finds and displays the five nearest certified DarkSky locations |
 
 ## Checks
 
@@ -118,8 +138,8 @@ and mobile-layout flow. It is not a claim of live geocoding or map-tile uptime.
 - [OpenStreetMap contributors](https://www.openstreetmap.org/copyright) for maps.
 - [National Park Service: Rate Your Night Sky](https://www.nps.gov/subjects/nightskies/rateyoursky.htm)
   for context on limiting magnitude and dark-sky visibility.
-
 The historical teammate guide, mentor demo, and independent initial astronomy
 comparison remain in `TEAMMATE_GUIDE.md`, `MENTOR_DEMO.md`, and
 `ASTRONOMY_VALIDATION.md`; they describe earlier milestones and may not match
 all current screens or test counts.
+- [International Dark-Sky Association](https://darksky.org/) for the official certified DarkSky location directory.
