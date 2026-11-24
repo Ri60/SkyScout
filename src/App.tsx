@@ -335,7 +335,7 @@ export default function App() {
             }
           >
             <ObservationPage
-              key={`${observation.place.id}-${observation.date}-${observation.time}`}
+              key={`${observation.place.id}-${observation.place.latitude}-${observation.place.longitude}-${observation.date}-${observation.time}`}
               observation={observation}
               onEdit={() => navigate('setup')}
             />

@@ -7,6 +7,7 @@ import type { SkyTarget } from './astronomy'
 import NightSky from './NightSky'
 import Mission from './Mission'
 import LocationMap from './LocationMap'
+import DarkSkyFinder from './DarkSkyFinder'
 import SkyChart from './SkyChart'
 import ObjectExplorer from './ObjectExplorer'
 import ObservationPlanner from './ObservationPlanner'
@@ -371,6 +372,7 @@ export default function ObservationPage({
               </div>
             </div>
             <LocationMap place={place} />
+            <DarkSkyFinder place={place} />
             <div className="location-tips">
               {[
                 [

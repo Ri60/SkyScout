@@ -1,0 +1,1987 @@
+{
+  "results": [
+    {
+      "id": "aenos-national-park-dark-sky-park",
+      "name": "Aenos National Park",
+      "country": "Greece",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "xichong-shenzhen-dark-sky-community",
+      "name": "Xichong, Shenzen",
+      "country": "China",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "wairarapa-dark-sky-reserve",
+      "name": "Wairarapa Dark Sky Reserve",
+      "country": "New Zealand",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": [
+        {
+          "name": "Wairarapa Lake Domain",
+          "country": "New Zealand",
+          "latitude": -41.16827,
+          "longitude": 175.2902,
+          "similarity": 0.333,
+          "countryMatch": true,
+          "searchedAs": "Wairarapa"
+        }
+      ]
+    },
+    {
+      "id": "keweenaw-michigan-dark-sky-park",
+      "name": "Keweenaw Dark Sky Park",
+      "country": "U.S.A.",
+      "accepted": true,
+      "coordinates": {
+        "latitude": 46.86021,
+        "longitude": -88.48179
+      },
+      "candidates": [
+        {
+          "name": "Keweenaw Bay",
+          "country": "United States",
+          "latitude": 46.86021,
+          "longitude": -88.48179,
+          "similarity": 0.5,
+          "countryMatch": true,
+          "searchedAs": "Keweenaw"
+        },
+        {
+          "name": "Keweenaw Point",
+          "country": "United States",
+          "latitude": 47.40157,
+          "longitude": -87.71178,
+          "similarity": 0.5,
+          "countryMatch": true,
+          "searchedAs": "Keweenaw"
+        },
+        {
+          "name": "Keweenaw Peninsula",
+          "country": "United States",
+          "latitude": 47.2502,
+          "longitude": -88.33345,
+          "similarity": 0.5,
+          "countryMatch": true,
+          "searchedAs": "Keweenaw"
+        },
+        {
+          "name": "Keweenaw County Park",
+          "country": "United States",
+          "latitude": 47.45657,
+          "longitude": -87.90789,
+          "similarity": 0.5,
+          "countryMatch": true,
+          "searchedAs": "Keweenaw"
+        },
+        {
+          "name": "Keweenaw National Historical Park",
+          "country": "United States",
+          "latitude": 47.13816,
+          "longitude": -88.56871,
+          "similarity": 0.333,
+          "countryMatch": true,
+          "searchedAs": "Keweenaw"
+        }
+      ]
+    },
+    {
+      "id": "greater-big-bend-international-dark-sky-reserve",
+      "name": "Greater Big Bend International Dark Sky Reserve",
+      "country": "Mexico",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "desengano-dark-sky-park",
+      "name": "Desengano State Park",
+      "country": "Brazil",
+      "accepted": true,
+      "coordinates": {
+        "latitude": -24.95,
+        "longitude": -52.78333
+      },
+      "candidates": [
+        {
+          "name": "Desengano",
+          "country": "Brazil",
+          "latitude": -24.95,
+          "longitude": -52.78333,
+          "similarity": 1,
+          "countryMatch": true,
+          "searchedAs": "Desengano"
+        },
+        {
+          "name": "Desengano",
+          "country": "Brazil",
+          "latitude": -6.7,
+          "longitude": -70.41667,
+          "similarity": 1,
+          "countryMatch": true,
+          "searchedAs": "Desengano"
+        },
+        {
+          "name": "Desengaño",
+          "country": "Mexico",
+          "latitude": 18.21667,
+          "longitude": -93.63333,
+          "similarity": 1,
+          "countryMatch": false,
+          "searchedAs": "Desengano"
+        },
+        {
+          "name": "Desengaño",
+          "country": "Cuba",
+          "latitude": 22.70366,
+          "longitude": -80.88568,
+          "similarity": 1,
+          "countryMatch": false,
+          "searchedAs": "Desengano"
+        },
+        {
+          "name": "Desengaño",
+          "country": "Cuba",
+          "latitude": 22.01783,
+          "longitude": -78.62029,
+          "similarity": 1,
+          "countryMatch": false,
+          "searchedAs": "Desengano"
+        }
+      ]
+    },
+    {
+      "id": "west-penwith-dark-sky-park",
+      "name": "West Penwith",
+      "country": "U.K.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "regional-natural-park-of-millevaches-dark-sky-reserve",
+      "name": "Regional Natural Park of Millevaches in Limousin",
+      "country": "France",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "top-of-the-pines-dark-sky-park",
+      "name": "Top of the Pines",
+      "country": "U.S.A.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "milton-reimers-ranch-park-dark-sky-park",
+      "name": "Milton Reimers Ranch Park",
+      "country": "U.S.A.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "bisei-town-ibara-city-dark-sky-community",
+      "name": "Bisei Town, Ibara City",
+      "country": "Japan",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "fry-family-park-urban-night-sky-place",
+      "name": "Fry Family Park",
+      "country": "U.S.A.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "palos-preserves-urban-night-sky-place",
+      "name": "Palos Preserves",
+      "country": "U.S.A.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "nucla-and-naturita-colorado-dark-sky-community",
+      "name": "Nucla and Naturita, Colorado",
+      "country": "U.S.A.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "amc-maine-woods-dark-sky-park",
+      "name": "AMC Maine Woods",
+      "country": "U.S.A.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "naturpark-attersee-traunsee-dark-sky-park",
+      "name": "Naturpark Attersee-Traunsee",
+      "country": "Austria",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "lake-fork-earth-and-sky-center-dark-sky-park",
+      "name": "Lake Fork Earth and Sky Center",
+      "country": "U.S.A.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "pisgah-astronomical-research-institute-dark-sky-park",
+      "name": "Pisgah Astronomical Research Institute",
+      "country": "U.S.A.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "jackson-lake-state-park-dark-sky-park",
+      "name": "Jackson Lake State Park",
+      "country": "U.S.A.",
+      "accepted": true,
+      "coordinates": {
+        "latitude": 36.37174,
+        "longitude": -94.24021
+      },
+      "candidates": [
+        {
+          "name": "Jackson Lake Dam",
+          "country": "United States",
+          "latitude": 36.37174,
+          "longitude": -94.24021,
+          "similarity": 0.667,
+          "countryMatch": true,
+          "searchedAs": "Jackson Lake"
+        },
+        {
+          "name": "Jackson Lake Dam",
+          "country": "United States",
+          "latitude": 36.2934,
+          "longitude": -93.51352,
+          "similarity": 0.667,
+          "countryMatch": true,
+          "searchedAs": "Jackson Lake"
+        },
+        {
+          "name": "Jackson Lake Dam",
+          "country": "United States",
+          "latitude": 34.98675,
+          "longitude": -92.16515,
+          "similarity": 0.667,
+          "countryMatch": true,
+          "searchedAs": "Jackson Lake"
+        },
+        {
+          "name": "Jackson Lake Dam",
+          "country": "United States",
+          "latitude": 35.64508,
+          "longitude": -92.58016,
+          "similarity": 0.667,
+          "countryMatch": true,
+          "searchedAs": "Jackson Lake"
+        },
+        {
+          "name": "Jackson Lake Dam",
+          "country": "United States",
+          "latitude": 30.7602,
+          "longitude": -83.68322,
+          "similarity": 0.667,
+          "countryMatch": true,
+          "searchedAs": "Jackson Lake"
+        }
+      ]
+    },
+    {
+      "id": "om-dark-sky-park-and-observatory-dark-sky-park",
+      "name": "OM Dark Sky Park & Observatory",
+      "country": "U.K.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "katahdin-woods-and-waters-dark-sky-sanctuary",
+      "name": "Katahdin Woods and Waters National Monument",
+      "country": "U.S.A.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "niue-dark-sky-sanctuary",
+      "name": "Niue",
+      "country": "Niue",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": [
+        {
+          "name": "Niue",
+          "country": "",
+          "latitude": -19.03333,
+          "longitude": -169.86667,
+          "similarity": 1,
+          "countryMatch": false,
+          "searchedAs": "Niue"
+        },
+        {
+          "name": "Niue",
+          "country": "",
+          "latitude": -19.04148,
+          "longitude": -169.85814,
+          "similarity": 1,
+          "countryMatch": false,
+          "searchedAs": "Niue"
+        },
+        {
+          "name": "Hannan International Airport",
+          "country": "",
+          "latitude": -19.08003,
+          "longitude": -169.92564,
+          "similarity": 0,
+          "countryMatch": false,
+          "searchedAs": "Niue"
+        },
+        {
+          "name": "Niuea",
+          "country": "Mozambique",
+          "latitude": -16.73389,
+          "longitude": 39.09778,
+          "similarity": 0,
+          "countryMatch": false,
+          "searchedAs": "Niue"
+        }
+      ]
+    },
+    {
+      "id": "niue-dark-sky-community",
+      "name": "Niue",
+      "country": "Niue",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": [
+        {
+          "name": "Niue",
+          "country": "",
+          "latitude": -19.03333,
+          "longitude": -169.86667,
+          "similarity": 1,
+          "countryMatch": false,
+          "searchedAs": "Niue"
+        },
+        {
+          "name": "Niue",
+          "country": "",
+          "latitude": -19.04148,
+          "longitude": -169.85814,
+          "similarity": 1,
+          "countryMatch": false,
+          "searchedAs": "Niue"
+        },
+        {
+          "name": "Hannan International Airport",
+          "country": "",
+          "latitude": -19.08003,
+          "longitude": -169.92564,
+          "similarity": 0,
+          "countryMatch": false,
+          "searchedAs": "Niue"
+        },
+        {
+          "name": "Niuea",
+          "country": "Mozambique",
+          "latitude": -16.73389,
+          "longitude": 39.09778,
+          "similarity": 0,
+          "countryMatch": false,
+          "searchedAs": "Niue"
+        }
+      ]
+    },
+    {
+      "id": "dr-lawless-dark-sky-park",
+      "name": "Dr. T.K. Lawless County Park",
+      "country": "U.S.A.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "alpes-azur-mercantour-dark-sky-reserve",
+      "name": "Alpes Azur Mercantour",
+      "country": "France",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "vrani-kamen-dark-sky-park",
+      "name": "Vrani kamen",
+      "country": "Croatia",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": [
+        {
+          "name": "Vrani Kamen",
+          "country": "Bosnia and Herzegovina",
+          "latitude": 44.08972,
+          "longitude": 19.05444,
+          "similarity": 1,
+          "countryMatch": false,
+          "searchedAs": "Vrani kamen"
+        },
+        {
+          "name": "Vrani Kamen",
+          "country": "Bosnia and Herzegovina",
+          "latitude": 44.26111,
+          "longitude": 17.13056,
+          "similarity": 1,
+          "countryMatch": false,
+          "searchedAs": "Vrani kamen"
+        }
+      ]
+    },
+    {
+      "id": "cranborne-chase-dark-sky-reserve",
+      "name": "Cranborne Chase",
+      "country": "U.K.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "hehuan-mountain-dark-sky-park",
+      "name": "Hehuan Mountain",
+      "country": "Chinese Taipei",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "petrova-gora-biljeg-dark-sky-park",
+      "name": "Petrova Gora-Biljeg",
+      "country": "Croatia",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "the-jump-up-dark-sky-sanctuary",
+      "name": "The Jump-Up",
+      "country": "Australia",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "aehai-kalahari-heritage-park-dark-sky-sanctuary",
+      "name": "!Ae!Hai Kalahari Heritage Park",
+      "country": "South Africa",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "pitcairn-islands-dark-sky-sanctuary",
+      "name": "Pitcairn Islands",
+      "country": "Pitcairn Islands",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": [
+        {
+          "name": "Pitcairn Islands",
+          "country": "",
+          "latitude": -25.06667,
+          "longitude": -130.1,
+          "similarity": 1,
+          "countryMatch": false,
+          "searchedAs": "Pitcairn Islands"
+        },
+        {
+          "name": "Pitcairn Islands",
+          "country": "",
+          "latitude": -25.07075,
+          "longitude": -130.10834,
+          "similarity": 1,
+          "countryMatch": false,
+          "searchedAs": "Pitcairn Islands"
+        }
+      ]
+    },
+    {
+      "id": "massacre-rim-wilderness-study-area-dark-sky-sanctuary",
+      "name": "Massacre Rim Wilderness Study Area",
+      "country": "U.S.A.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "rappahannock-county-park-dark-sky-park",
+      "name": "Rappahannock County Park",
+      "country": "U.S.A.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "stewart-island-rakiura-dark-sky-sanctuary",
+      "name": "Stewart Island / Rakiura",
+      "country": "New Zealand",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "tomintoul-glenlivet-cairngorms-dark-sky-park",
+      "name": "Tomintoul and Glenlivet - Cairngorms",
+      "country": "U.K.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "middle-fork-river-forest-preserve-dark-sky-park",
+      "name": "Middle Fork River Forest Preserve",
+      "country": "U.S.A.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "cevennes-dark-sky-reserve",
+      "name": "Cévennes National Park",
+      "country": "France",
+      "accepted": true,
+      "coordinates": {
+        "latitude": 44.42922,
+        "longitude": 3.71707
+      },
+      "candidates": [
+        {
+          "name": "Cévennes",
+          "country": "France",
+          "latitude": 44.42922,
+          "longitude": 3.71707,
+          "similarity": 1,
+          "countryMatch": true,
+          "searchedAs": "Cévennes"
+        }
+      ]
+    },
+    {
+      "id": "wimberley-valley-texas-dark-sky-community",
+      "name": "Wimberley Valley, Texas",
+      "country": "U.S.A.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "iriomote-ishigaki-national-park-dark-sky-park",
+      "name": "Iriomote-Ishigaki National Park",
+      "country": "Japan",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "central-idaho-dark-sky-reserve",
+      "name": "Central Idaho",
+      "country": "U.S.A.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "ramon-crater-nature-reserve-dark-sky-park",
+      "name": "Ramon Crater Nature Reserve",
+      "country": "Israel",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "bodmin-moor-dark-sky-park",
+      "name": "Bodmin Moor Dark Sky Landscape",
+      "country": "U.K.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "aotea-great-barrier-island-dark-sky-sanctuary",
+      "name": "Aotea Great Barrier Island",
+      "country": "New Zealand",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "bukk-national-park-dark-sky-park",
+      "name": "Bükk National Park",
+      "country": "Hungary",
+      "accepted": true,
+      "coordinates": {
+        "latitude": 48.08333,
+        "longitude": 20.5
+      },
+      "candidates": [
+        {
+          "name": "Bükk",
+          "country": "Hungary",
+          "latitude": 48.08333,
+          "longitude": 20.5,
+          "similarity": 1,
+          "countryMatch": true,
+          "searchedAs": "Bükk"
+        },
+        {
+          "name": "Bukka",
+          "country": "Norway",
+          "latitude": 69.43071,
+          "longitude": 17.85854,
+          "similarity": 0,
+          "countryMatch": false,
+          "searchedAs": "Bükk"
+        },
+        {
+          "name": "Bukku",
+          "country": "Indonesia",
+          "latitude": -4.4933,
+          "longitude": 120.1496,
+          "similarity": 0,
+          "countryMatch": false,
+          "searchedAs": "Bükk"
+        },
+        {
+          "name": "Bukka",
+          "country": "Indonesia",
+          "latitude": -9.5726,
+          "longitude": 119.1379,
+          "similarity": 0,
+          "countryMatch": false,
+          "searchedAs": "Bükk"
+        },
+        {
+          "name": "Bukka",
+          "country": "India",
+          "latitude": 24.23921,
+          "longitude": 84.30637,
+          "similarity": 0,
+          "countryMatch": false,
+          "searchedAs": "Bükk"
+        }
+      ]
+    },
+    {
+      "id": "waterton-glacier-international-peace-park-dark-sky-park",
+      "name": "Waterton-Glacier International Peace Park",
+      "country": "Canada",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": [
+        {
+          "name": "Waterton-Glacier International Peace Park",
+          "country": "United States",
+          "latitude": 48.68747,
+          "longitude": -113.80512,
+          "similarity": 1,
+          "countryMatch": false,
+          "searchedAs": "Waterton-Glacier International Peace Park"
+        }
+      ]
+    },
+    {
+      "id": "mon-and-nyord-dark-sky-park",
+      "name": "Møn and Nyord",
+      "country": "Denmark",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "mon-and-nyord-dark-sky-community",
+      "name": "Møn and Nyord",
+      "country": "Denmark",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "stephen-c-foster-state-park-dark-sky-park",
+      "name": "Okefenokee State Park",
+      "country": "U.S.A.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": [
+        {
+          "name": "Okefenokee National Wildlife Refuge",
+          "country": "United States",
+          "latitude": 30.80026,
+          "longitude": -82.30356,
+          "similarity": 0.25,
+          "countryMatch": true,
+          "searchedAs": "Okefenokee"
+        }
+      ]
+    },
+    {
+      "id": "lauwersmeer-national-park-dark-sky-park",
+      "name": "Lauwersmeer National Park",
+      "country": "Netherlands",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "moores-reserve-south-downs-dark-sky-reserve",
+      "name": "Moore's Reserve",
+      "country": "U.K.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "mayo-dark-sky-park",
+      "name": "Mayo Dark Sky Park",
+      "country": "Ireland",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": [
+        {
+          "name": "Mayo",
+          "country": "United States",
+          "latitude": 30.053,
+          "longitude": -83.17486,
+          "similarity": 1,
+          "countryMatch": false,
+          "searchedAs": "Mayo"
+        },
+        {
+          "name": "Mayo",
+          "country": "United States",
+          "latitude": 38.88761,
+          "longitude": -76.5119,
+          "similarity": 1,
+          "countryMatch": false,
+          "searchedAs": "Mayo"
+        },
+        {
+          "name": "Mayo",
+          "country": "United States",
+          "latitude": 35.08401,
+          "longitude": -81.85983,
+          "similarity": 1,
+          "countryMatch": false,
+          "searchedAs": "Mayo"
+        },
+        {
+          "name": "Mayo",
+          "country": "Thailand",
+          "latitude": 6.71864,
+          "longitude": 101.40983,
+          "similarity": 1,
+          "countryMatch": false,
+          "searchedAs": "Mayo"
+        },
+        {
+          "name": "Mayo",
+          "country": "Philippines",
+          "latitude": 7.00211,
+          "longitude": 126.33198,
+          "similarity": 1,
+          "countryMatch": false,
+          "searchedAs": "Mayo"
+        }
+      ]
+    },
+    {
+      "id": "flagstaff-area-national-monuments-dark-sky-park",
+      "name": "Flagstaff Area National Monuments",
+      "country": "U.S.A.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "big-park-village-of-oak-creek-dark-sky-community",
+      "name": "Big Park / Village of Oak Creek, Arizona",
+      "country": "U.S.A.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "cosmic-campground-dark-sky-place",
+      "name": "Cosmic Campground",
+      "country": "U.S.A.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "snowdonia-national-park-dark-sky-reserve",
+      "name": "Eryri National Park (Snowdonia)",
+      "country": "U.K.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "ubaru-camp-and-retreat-center-dark-sky-park",
+      "name": "UBarU Camp and Retreat Center",
+      "country": "U.S.A.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "yeongyang-firefly-eco-park-dark-sky-park",
+      "name": "Yeongyang Firefly Eco Park",
+      "country": "South Korea",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "gabriela-mistral-dark-sky-sanctuary",
+      "name": "Gabriela Mistral",
+      "country": "Chile",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": [
+        {
+          "name": "Gabriela Mistral",
+          "country": "Colombia",
+          "latitude": 4.99475,
+          "longitude": -73.90946,
+          "similarity": 1,
+          "countryMatch": false,
+          "searchedAs": "Gabriela Mistral"
+        },
+        {
+          "name": "Gabriela Mistral",
+          "country": "Colombia",
+          "latitude": 2.76479,
+          "longitude": -76.32954,
+          "similarity": 1,
+          "countryMatch": false,
+          "searchedAs": "Gabriela Mistral"
+        }
+      ]
+    },
+    {
+      "id": "elan-valley-dark-sky-park",
+      "name": "Elan Valley Estate",
+      "country": "U.K.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "de-boschplaat-dark-sky-park",
+      "name": "De Boschplaat",
+      "country": "Netherlands",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "geauga-observatory-park-dark-sky-park",
+      "name": "Geauga Observatory Park",
+      "country": "U.S.A.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "zselic-national-landscape-protection-area-dark-sky-park",
+      "name": "Zselic National Landscape Protection Area",
+      "country": "Hungary",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "pickett-memorial-and-pogue-creek-canyon-dark-sky-park",
+      "name": "Pickett CCC Memorial State Park & Pogue Creek Canyon State Natural Area",
+      "country": "U.S.A.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "northumberland-national-park-and-kielder-water-forest-dark-sky-park",
+      "name": "Northumberland National Park and Kielder Water & Forest Park",
+      "country": "U.K.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "north-fork-park-dark-sky-park",
+      "name": "North Fork Park",
+      "country": "U.S.A.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "galloway-forest-park-dark-sky-park",
+      "name": "Galloway Forest Park",
+      "country": "U.K.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": [
+        {
+          "name": "Galloway",
+          "country": "United States",
+          "latitude": 39.23176,
+          "longitude": -80.12203,
+          "similarity": 0.5,
+          "countryMatch": false,
+          "searchedAs": "Galloway"
+        },
+        {
+          "name": "Galloway",
+          "country": "United States",
+          "latitude": 39.91312,
+          "longitude": -83.16241,
+          "similarity": 0.5,
+          "countryMatch": false,
+          "searchedAs": "Galloway"
+        },
+        {
+          "name": "Galloway",
+          "country": "United States",
+          "latitude": 44.71275,
+          "longitude": -89.26428,
+          "similarity": 0.5,
+          "countryMatch": false,
+          "searchedAs": "Galloway"
+        },
+        {
+          "name": "Galloway",
+          "country": "New Zealand",
+          "latitude": -45.21667,
+          "longitude": 169.45,
+          "similarity": 0.5,
+          "countryMatch": false,
+          "searchedAs": "Galloway"
+        },
+        {
+          "name": "Galloway",
+          "country": "United States",
+          "latitude": 34.77981,
+          "longitude": -92.12876,
+          "similarity": 0.5,
+          "countryMatch": false,
+          "searchedAs": "Galloway"
+        }
+      ]
+    },
+    {
+      "id": "eifel-national-park-dark-sky-park",
+      "name": "Eifel National Park",
+      "country": "Germany",
+      "accepted": true,
+      "coordinates": {
+        "latitude": 50.25,
+        "longitude": 6.66667
+      },
+      "candidates": [
+        {
+          "name": "Eifel",
+          "country": "Germany",
+          "latitude": 50.25,
+          "longitude": 6.66667,
+          "similarity": 1,
+          "countryMatch": true,
+          "searchedAs": "Eifel"
+        },
+        {
+          "name": "Eifelpark",
+          "country": "Germany",
+          "latitude": 49.96295,
+          "longitude": 6.6169,
+          "similarity": 0,
+          "countryMatch": true,
+          "searchedAs": "Eifel"
+        }
+      ]
+    },
+    {
+      "id": "mayland-earth-to-sky-park-dark-sky-park",
+      "name": "Mayland Earth to Sky Park & Bare Dark Sky Observatory",
+      "country": "U.S.A.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "westcliffe-and-silver-cliff-dark-sky-community",
+      "name": "Westcliffe and Silver Cliff, Colorado",
+      "country": "U.S.A.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "kaibab-paiute-indian-reservation-dark-sky-community",
+      "name": "Thunder Mountain Pootsee Nightsky",
+      "country": "U.S.A.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "sark-dark-sky-community",
+      "name": "Sark, Channel Islands",
+      "country": "Channel Islands",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "westhavelland-dark-sky-reserve",
+      "name": "Westhavelland",
+      "country": "Germany",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "aoraki-mackenzie-dark-sky-reserve",
+      "name": "Aoraki Mackenzie",
+      "country": "New Zealand",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "kerry-dark-sky-reserve",
+      "name": "Kerry",
+      "country": "Ireland",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": [
+        {
+          "name": "Carrowkeel",
+          "country": "Ireland",
+          "latitude": 55.13769,
+          "longitude": -7.66456,
+          "similarity": 0,
+          "countryMatch": true,
+          "searchedAs": "Kerry"
+        },
+        {
+          "name": "Kerry",
+          "country": "Australia",
+          "latitude": -28.12828,
+          "longitude": 153.01093,
+          "similarity": 1,
+          "countryMatch": false,
+          "searchedAs": "Kerry"
+        },
+        {
+          "name": "Kerry",
+          "country": "United Kingdom",
+          "latitude": 52.50156,
+          "longitude": -3.25862,
+          "similarity": 1,
+          "countryMatch": false,
+          "searchedAs": "Kerry"
+        },
+        {
+          "name": "Kerry",
+          "country": "Australia",
+          "latitude": -28.10516,
+          "longitude": 153.02641,
+          "similarity": 1,
+          "countryMatch": false,
+          "searchedAs": "Kerry"
+        },
+        {
+          "name": "Kerry",
+          "country": "United States",
+          "latitude": 48.45638,
+          "longitude": -97.80426,
+          "similarity": 1,
+          "countryMatch": false,
+          "searchedAs": "Kerry"
+        }
+      ]
+    }
+  ],
+  "missing": [
+    {
+      "id": "aenos-national-park-dark-sky-park",
+      "name": "Aenos National Park",
+      "country": "Greece",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "xichong-shenzhen-dark-sky-community",
+      "name": "Xichong, Shenzen",
+      "country": "China",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "wairarapa-dark-sky-reserve",
+      "name": "Wairarapa Dark Sky Reserve",
+      "country": "New Zealand",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": [
+        {
+          "name": "Wairarapa Lake Domain",
+          "country": "New Zealand",
+          "latitude": -41.16827,
+          "longitude": 175.2902,
+          "similarity": 0.333,
+          "countryMatch": true,
+          "searchedAs": "Wairarapa"
+        }
+      ]
+    },
+    {
+      "id": "greater-big-bend-international-dark-sky-reserve",
+      "name": "Greater Big Bend International Dark Sky Reserve",
+      "country": "Mexico",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "west-penwith-dark-sky-park",
+      "name": "West Penwith",
+      "country": "U.K.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "regional-natural-park-of-millevaches-dark-sky-reserve",
+      "name": "Regional Natural Park of Millevaches in Limousin",
+      "country": "France",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "top-of-the-pines-dark-sky-park",
+      "name": "Top of the Pines",
+      "country": "U.S.A.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "milton-reimers-ranch-park-dark-sky-park",
+      "name": "Milton Reimers Ranch Park",
+      "country": "U.S.A.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "bisei-town-ibara-city-dark-sky-community",
+      "name": "Bisei Town, Ibara City",
+      "country": "Japan",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "fry-family-park-urban-night-sky-place",
+      "name": "Fry Family Park",
+      "country": "U.S.A.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "palos-preserves-urban-night-sky-place",
+      "name": "Palos Preserves",
+      "country": "U.S.A.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "nucla-and-naturita-colorado-dark-sky-community",
+      "name": "Nucla and Naturita, Colorado",
+      "country": "U.S.A.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "amc-maine-woods-dark-sky-park",
+      "name": "AMC Maine Woods",
+      "country": "U.S.A.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "naturpark-attersee-traunsee-dark-sky-park",
+      "name": "Naturpark Attersee-Traunsee",
+      "country": "Austria",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "lake-fork-earth-and-sky-center-dark-sky-park",
+      "name": "Lake Fork Earth and Sky Center",
+      "country": "U.S.A.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "pisgah-astronomical-research-institute-dark-sky-park",
+      "name": "Pisgah Astronomical Research Institute",
+      "country": "U.S.A.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "om-dark-sky-park-and-observatory-dark-sky-park",
+      "name": "OM Dark Sky Park & Observatory",
+      "country": "U.K.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "katahdin-woods-and-waters-dark-sky-sanctuary",
+      "name": "Katahdin Woods and Waters National Monument",
+      "country": "U.S.A.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "niue-dark-sky-sanctuary",
+      "name": "Niue",
+      "country": "Niue",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": [
+        {
+          "name": "Niue",
+          "country": "",
+          "latitude": -19.03333,
+          "longitude": -169.86667,
+          "similarity": 1,
+          "countryMatch": false,
+          "searchedAs": "Niue"
+        },
+        {
+          "name": "Niue",
+          "country": "",
+          "latitude": -19.04148,
+          "longitude": -169.85814,
+          "similarity": 1,
+          "countryMatch": false,
+          "searchedAs": "Niue"
+        },
+        {
+          "name": "Hannan International Airport",
+          "country": "",
+          "latitude": -19.08003,
+          "longitude": -169.92564,
+          "similarity": 0,
+          "countryMatch": false,
+          "searchedAs": "Niue"
+        },
+        {
+          "name": "Niuea",
+          "country": "Mozambique",
+          "latitude": -16.73389,
+          "longitude": 39.09778,
+          "similarity": 0,
+          "countryMatch": false,
+          "searchedAs": "Niue"
+        }
+      ]
+    },
+    {
+      "id": "niue-dark-sky-community",
+      "name": "Niue",
+      "country": "Niue",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": [
+        {
+          "name": "Niue",
+          "country": "",
+          "latitude": -19.03333,
+          "longitude": -169.86667,
+          "similarity": 1,
+          "countryMatch": false,
+          "searchedAs": "Niue"
+        },
+        {
+          "name": "Niue",
+          "country": "",
+          "latitude": -19.04148,
+          "longitude": -169.85814,
+          "similarity": 1,
+          "countryMatch": false,
+          "searchedAs": "Niue"
+        },
+        {
+          "name": "Hannan International Airport",
+          "country": "",
+          "latitude": -19.08003,
+          "longitude": -169.92564,
+          "similarity": 0,
+          "countryMatch": false,
+          "searchedAs": "Niue"
+        },
+        {
+          "name": "Niuea",
+          "country": "Mozambique",
+          "latitude": -16.73389,
+          "longitude": 39.09778,
+          "similarity": 0,
+          "countryMatch": false,
+          "searchedAs": "Niue"
+        }
+      ]
+    },
+    {
+      "id": "dr-lawless-dark-sky-park",
+      "name": "Dr. T.K. Lawless County Park",
+      "country": "U.S.A.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "alpes-azur-mercantour-dark-sky-reserve",
+      "name": "Alpes Azur Mercantour",
+      "country": "France",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "vrani-kamen-dark-sky-park",
+      "name": "Vrani kamen",
+      "country": "Croatia",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": [
+        {
+          "name": "Vrani Kamen",
+          "country": "Bosnia and Herzegovina",
+          "latitude": 44.08972,
+          "longitude": 19.05444,
+          "similarity": 1,
+          "countryMatch": false,
+          "searchedAs": "Vrani kamen"
+        },
+        {
+          "name": "Vrani Kamen",
+          "country": "Bosnia and Herzegovina",
+          "latitude": 44.26111,
+          "longitude": 17.13056,
+          "similarity": 1,
+          "countryMatch": false,
+          "searchedAs": "Vrani kamen"
+        }
+      ]
+    },
+    {
+      "id": "cranborne-chase-dark-sky-reserve",
+      "name": "Cranborne Chase",
+      "country": "U.K.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "hehuan-mountain-dark-sky-park",
+      "name": "Hehuan Mountain",
+      "country": "Chinese Taipei",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "petrova-gora-biljeg-dark-sky-park",
+      "name": "Petrova Gora-Biljeg",
+      "country": "Croatia",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "the-jump-up-dark-sky-sanctuary",
+      "name": "The Jump-Up",
+      "country": "Australia",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "aehai-kalahari-heritage-park-dark-sky-sanctuary",
+      "name": "!Ae!Hai Kalahari Heritage Park",
+      "country": "South Africa",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "pitcairn-islands-dark-sky-sanctuary",
+      "name": "Pitcairn Islands",
+      "country": "Pitcairn Islands",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": [
+        {
+          "name": "Pitcairn Islands",
+          "country": "",
+          "latitude": -25.06667,
+          "longitude": -130.1,
+          "similarity": 1,
+          "countryMatch": false,
+          "searchedAs": "Pitcairn Islands"
+        },
+        {
+          "name": "Pitcairn Islands",
+          "country": "",
+          "latitude": -25.07075,
+          "longitude": -130.10834,
+          "similarity": 1,
+          "countryMatch": false,
+          "searchedAs": "Pitcairn Islands"
+        }
+      ]
+    },
+    {
+      "id": "massacre-rim-wilderness-study-area-dark-sky-sanctuary",
+      "name": "Massacre Rim Wilderness Study Area",
+      "country": "U.S.A.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "rappahannock-county-park-dark-sky-park",
+      "name": "Rappahannock County Park",
+      "country": "U.S.A.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "stewart-island-rakiura-dark-sky-sanctuary",
+      "name": "Stewart Island / Rakiura",
+      "country": "New Zealand",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "tomintoul-glenlivet-cairngorms-dark-sky-park",
+      "name": "Tomintoul and Glenlivet - Cairngorms",
+      "country": "U.K.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "middle-fork-river-forest-preserve-dark-sky-park",
+      "name": "Middle Fork River Forest Preserve",
+      "country": "U.S.A.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "wimberley-valley-texas-dark-sky-community",
+      "name": "Wimberley Valley, Texas",
+      "country": "U.S.A.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "iriomote-ishigaki-national-park-dark-sky-park",
+      "name": "Iriomote-Ishigaki National Park",
+      "country": "Japan",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "central-idaho-dark-sky-reserve",
+      "name": "Central Idaho",
+      "country": "U.S.A.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "ramon-crater-nature-reserve-dark-sky-park",
+      "name": "Ramon Crater Nature Reserve",
+      "country": "Israel",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "bodmin-moor-dark-sky-park",
+      "name": "Bodmin Moor Dark Sky Landscape",
+      "country": "U.K.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "aotea-great-barrier-island-dark-sky-sanctuary",
+      "name": "Aotea Great Barrier Island",
+      "country": "New Zealand",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "waterton-glacier-international-peace-park-dark-sky-park",
+      "name": "Waterton-Glacier International Peace Park",
+      "country": "Canada",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": [
+        {
+          "name": "Waterton-Glacier International Peace Park",
+          "country": "United States",
+          "latitude": 48.68747,
+          "longitude": -113.80512,
+          "similarity": 1,
+          "countryMatch": false,
+          "searchedAs": "Waterton-Glacier International Peace Park"
+        }
+      ]
+    },
+    {
+      "id": "mon-and-nyord-dark-sky-park",
+      "name": "Møn and Nyord",
+      "country": "Denmark",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "mon-and-nyord-dark-sky-community",
+      "name": "Møn and Nyord",
+      "country": "Denmark",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "stephen-c-foster-state-park-dark-sky-park",
+      "name": "Okefenokee State Park",
+      "country": "U.S.A.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": [
+        {
+          "name": "Okefenokee National Wildlife Refuge",
+          "country": "United States",
+          "latitude": 30.80026,
+          "longitude": -82.30356,
+          "similarity": 0.25,
+          "countryMatch": true,
+          "searchedAs": "Okefenokee"
+        }
+      ]
+    },
+    {
+      "id": "lauwersmeer-national-park-dark-sky-park",
+      "name": "Lauwersmeer National Park",
+      "country": "Netherlands",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "moores-reserve-south-downs-dark-sky-reserve",
+      "name": "Moore's Reserve",
+      "country": "U.K.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "mayo-dark-sky-park",
+      "name": "Mayo Dark Sky Park",
+      "country": "Ireland",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": [
+        {
+          "name": "Mayo",
+          "country": "United States",
+          "latitude": 30.053,
+          "longitude": -83.17486,
+          "similarity": 1,
+          "countryMatch": false,
+          "searchedAs": "Mayo"
+        },
+        {
+          "name": "Mayo",
+          "country": "United States",
+          "latitude": 38.88761,
+          "longitude": -76.5119,
+          "similarity": 1,
+          "countryMatch": false,
+          "searchedAs": "Mayo"
+        },
+        {
+          "name": "Mayo",
+          "country": "United States",
+          "latitude": 35.08401,
+          "longitude": -81.85983,
+          "similarity": 1,
+          "countryMatch": false,
+          "searchedAs": "Mayo"
+        },
+        {
+          "name": "Mayo",
+          "country": "Thailand",
+          "latitude": 6.71864,
+          "longitude": 101.40983,
+          "similarity": 1,
+          "countryMatch": false,
+          "searchedAs": "Mayo"
+        },
+        {
+          "name": "Mayo",
+          "country": "Philippines",
+          "latitude": 7.00211,
+          "longitude": 126.33198,
+          "similarity": 1,
+          "countryMatch": false,
+          "searchedAs": "Mayo"
+        }
+      ]
+    },
+    {
+      "id": "flagstaff-area-national-monuments-dark-sky-park",
+      "name": "Flagstaff Area National Monuments",
+      "country": "U.S.A.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "big-park-village-of-oak-creek-dark-sky-community",
+      "name": "Big Park / Village of Oak Creek, Arizona",
+      "country": "U.S.A.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "cosmic-campground-dark-sky-place",
+      "name": "Cosmic Campground",
+      "country": "U.S.A.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "snowdonia-national-park-dark-sky-reserve",
+      "name": "Eryri National Park (Snowdonia)",
+      "country": "U.K.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "ubaru-camp-and-retreat-center-dark-sky-park",
+      "name": "UBarU Camp and Retreat Center",
+      "country": "U.S.A.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "yeongyang-firefly-eco-park-dark-sky-park",
+      "name": "Yeongyang Firefly Eco Park",
+      "country": "South Korea",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "gabriela-mistral-dark-sky-sanctuary",
+      "name": "Gabriela Mistral",
+      "country": "Chile",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": [
+        {
+          "name": "Gabriela Mistral",
+          "country": "Colombia",
+          "latitude": 4.99475,
+          "longitude": -73.90946,
+          "similarity": 1,
+          "countryMatch": false,
+          "searchedAs": "Gabriela Mistral"
+        },
+        {
+          "name": "Gabriela Mistral",
+          "country": "Colombia",
+          "latitude": 2.76479,
+          "longitude": -76.32954,
+          "similarity": 1,
+          "countryMatch": false,
+          "searchedAs": "Gabriela Mistral"
+        }
+      ]
+    },
+    {
+      "id": "elan-valley-dark-sky-park",
+      "name": "Elan Valley Estate",
+      "country": "U.K.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "de-boschplaat-dark-sky-park",
+      "name": "De Boschplaat",
+      "country": "Netherlands",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "geauga-observatory-park-dark-sky-park",
+      "name": "Geauga Observatory Park",
+      "country": "U.S.A.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "zselic-national-landscape-protection-area-dark-sky-park",
+      "name": "Zselic National Landscape Protection Area",
+      "country": "Hungary",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "pickett-memorial-and-pogue-creek-canyon-dark-sky-park",
+      "name": "Pickett CCC Memorial State Park & Pogue Creek Canyon State Natural Area",
+      "country": "U.S.A.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "northumberland-national-park-and-kielder-water-forest-dark-sky-park",
+      "name": "Northumberland National Park and Kielder Water & Forest Park",
+      "country": "U.K.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "north-fork-park-dark-sky-park",
+      "name": "North Fork Park",
+      "country": "U.S.A.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "galloway-forest-park-dark-sky-park",
+      "name": "Galloway Forest Park",
+      "country": "U.K.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": [
+        {
+          "name": "Galloway",
+          "country": "United States",
+          "latitude": 39.23176,
+          "longitude": -80.12203,
+          "similarity": 0.5,
+          "countryMatch": false,
+          "searchedAs": "Galloway"
+        },
+        {
+          "name": "Galloway",
+          "country": "United States",
+          "latitude": 39.91312,
+          "longitude": -83.16241,
+          "similarity": 0.5,
+          "countryMatch": false,
+          "searchedAs": "Galloway"
+        },
+        {
+          "name": "Galloway",
+          "country": "United States",
+          "latitude": 44.71275,
+          "longitude": -89.26428,
+          "similarity": 0.5,
+          "countryMatch": false,
+          "searchedAs": "Galloway"
+        },
+        {
+          "name": "Galloway",
+          "country": "New Zealand",
+          "latitude": -45.21667,
+          "longitude": 169.45,
+          "similarity": 0.5,
+          "countryMatch": false,
+          "searchedAs": "Galloway"
+        },
+        {
+          "name": "Galloway",
+          "country": "United States",
+          "latitude": 34.77981,
+          "longitude": -92.12876,
+          "similarity": 0.5,
+          "countryMatch": false,
+          "searchedAs": "Galloway"
+        }
+      ]
+    },
+    {
+      "id": "mayland-earth-to-sky-park-dark-sky-park",
+      "name": "Mayland Earth to Sky Park & Bare Dark Sky Observatory",
+      "country": "U.S.A.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "westcliffe-and-silver-cliff-dark-sky-community",
+      "name": "Westcliffe and Silver Cliff, Colorado",
+      "country": "U.S.A.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "kaibab-paiute-indian-reservation-dark-sky-community",
+      "name": "Thunder Mountain Pootsee Nightsky",
+      "country": "U.S.A.",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "sark-dark-sky-community",
+      "name": "Sark, Channel Islands",
+      "country": "Channel Islands",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "westhavelland-dark-sky-reserve",
+      "name": "Westhavelland",
+      "country": "Germany",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "aoraki-mackenzie-dark-sky-reserve",
+      "name": "Aoraki Mackenzie",
+      "country": "New Zealand",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": []
+    },
+    {
+      "id": "kerry-dark-sky-reserve",
+      "name": "Kerry",
+      "country": "Ireland",
+      "accepted": false,
+      "coordinates": null,
+      "candidates": [
+        {
+          "name": "Carrowkeel",
+          "country": "Ireland",
+          "latitude": 55.13769,
+          "longitude": -7.66456,
+          "similarity": 0,
+          "countryMatch": true,
+          "searchedAs": "Kerry"
+        },
+        {
+          "name": "Kerry",
+          "country": "Australia",
+          "latitude": -28.12828,
+          "longitude": 153.01093,
+          "similarity": 1,
+          "countryMatch": false,
+          "searchedAs": "Kerry"
+        },
+        {
+          "name": "Kerry",
+          "country": "United Kingdom",
+          "latitude": 52.50156,
+          "longitude": -3.25862,
+          "similarity": 1,
+          "countryMatch": false,
+          "searchedAs": "Kerry"
+        },
+        {
+          "name": "Kerry",
+          "country": "Australia",
+          "latitude": -28.10516,
+          "longitude": 153.02641,
+          "similarity": 1,
+          "countryMatch": false,
+          "searchedAs": "Kerry"
+        },
+        {
+          "name": "Kerry",
+          "country": "United States",
+          "latitude": 48.45638,
+          "longitude": -97.80426,
+          "similarity": 1,
+          "countryMatch": false,
+          "searchedAs": "Kerry"
+        }
+      ]
+    }
+  ]
+}

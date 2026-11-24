@@ -2282,3 +2282,61 @@ a svg {
 .info-facts { margin: 0; padding-left: 1.125rem; line-height: 1.55; }
 .info-facts li + li { margin-top: 0.4rem; }
 .info-disclaimer { margin: 1.25rem 0 0; font-size: 0.5rem; color: #7b758a; }
+
+
+/* Dark Sky Finder */
+.dark-sky-finder {
+  margin-top: 24px;
+}
+
+.dark-sky-finder > p {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.dark-sky-list {
+  display: grid;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.dark-sky-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--panel);
+}
+
+.dark-sky-card h3 {
+  margin: 0 0 6px;
+}
+
+.dark-sky-card p {
+  margin: 5px 0;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.dark-sky-card strong {
+  flex-shrink: 0;
+  color: var(--lavender);
+  white-space: nowrap;
+}
+
+.dark-sky-finder .fine-print {
+  margin-top: 18px;
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  .dark-sky-card {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
