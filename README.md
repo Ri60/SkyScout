@@ -16,6 +16,35 @@ Internet access is required for city lookup and geographic map tiles. The star
 catalogue and astronomy calculations run locally in the browser. The heavier
 exploration module loads only when the observing page is opened.
 
+### Enable Gemini for More Info
+
+Each teammate needs their own Gemini API key to use **More Info** on a sky
+object. The rest of SkyScout works without a key.
+
+1. If you already cloned SkyScout, run `git pull --ff-only` from the project
+   folder to get the latest code.
+2. Sign in to [Google AI Studio](https://aistudio.google.com/apikey). Copy an
+   existing Gemini API key or click **Create API key**, give it a name, and
+   select your default Gemini project if prompted.
+3. Create `.env.local` in the SkyScout root folder, next to `package.json`.
+   Replace the placeholder below with your own key.
+
+   ```dotenv
+   GEMINI_API_KEY=your_api_key_here
+   ```
+
+4. Save the file and run `npm run dev`. If Vite is already running, stop it
+   with Ctrl+C and restart it to load the key.
+5. Open the local URL printed in the terminal and click **More Info** on a
+   sky object to test the setup.
+
+Git ignores `.env.local`. Keep your key out of commits, group chats, and
+screenshots.
+
+If **More Info** fails, check the terminal running Vite. If it shows
+`Gemini error: 503` with a high-demand message, the model is temporarily
+overloaded. Wait a minute or two and click **Try again**.
+
 ## Dependencies
 
 Project dependencies are managed through `package.json` and `package-lock.json`. Run `npm ci` to install them.
@@ -47,7 +76,7 @@ The DarkSky Finder uses locally bundled coordinates and certified location data.
 6. **Observing location:** a separate tab contains the city-centred
    OpenStreetMap and practical site-selection tips. The marker is a city
    reference location, not GPS or a verified dark-sky site.
-7. **DarkSky Finder:** browse officially certified DarkSky locations, including parks, reserves, sanctuaries, communities, urban places, and approved lodging. The finder uses the bundled coordinates for 226 certified locations and displays the five nearest to the selected location.
+7. **DarkSky Finder:** browse officially certified DarkSky locations, including parks, reserves, sanctuaries, communities, urban places, and approved lodging. The finder uses bundled coordinates for 226 officially certified locations and displays the five nearest to the selected location.
 
 The current observation can be restored on refreshing `#/mission` in the same
 tab through sessionStorage. Edit details retains the form values. Invalid or
@@ -138,8 +167,9 @@ and mobile-layout flow. It is not a claim of live geocoding or map-tile uptime.
 - [OpenStreetMap contributors](https://www.openstreetmap.org/copyright) for maps.
 - [National Park Service: Rate Your Night Sky](https://www.nps.gov/subjects/nightskies/rateyoursky.htm)
   for context on limiting magnitude and dark-sky visibility.
+- [International Dark-Sky Association](https://darksky.org/) for the official certified DarkSky location directory.
+
 The historical teammate guide, mentor demo, and independent initial astronomy
 comparison remain in `TEAMMATE_GUIDE.md`, `MENTOR_DEMO.md`, and
 `ASTRONOMY_VALIDATION.md`; they describe earlier milestones and may not match
 all current screens or test counts.
-- [International Dark-Sky Association](https://darksky.org/) for the official certified DarkSky location directory.
